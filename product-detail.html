@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Premium Hoodie | SoulThread</title>
+  <link rel="icon" type="image/svg+xml" href="Assets/images/favicon.svg">
+  <link rel="stylesheet" href="CSS/style.css">
+  <link rel="stylesheet" href="CSS/responsive.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header scrolled" id="header">
+    <div class="nav-container">
+      <div class="logo">SoulThread</div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="store.html">Store</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i></a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Product Detail -->
+  <section class="product-detail">
+    <div class="container">
+      <div class="product-layout">
+        <!-- Media Gallery -->
+        <div class="gallery">
+          <div class="main-image">
+            <img src="Assets/images/hoodie_prod_1777238758809.png" alt="Premium Hoodie" id="main-image">
+          </div>
+          <div class="gallery-thumbs">
+            <img src="Assets/images/hoodie_prod_1777238758809.png" alt="Thumbnail" class="thumb active" data-src="Assets/images/hoodie_prod_1777238758809.png">
+            <img src="Assets/images/product_art_1777236847250.png" alt="Thumbnail" class="thumb" data-src="Assets/images/product_art_1777236847250.png">
+            <img src="Assets/images/hero_bg_1777238662886.png" alt="Thumbnail" class="thumb" data-src="Assets/images/hero_bg_1777238662886.png">
+          </div>
+        </div>
+
+        <!-- Product Info -->
+        <div class="product-info">
+          <h1>Premium Hoodie</h1>
+          <p class="price">Rs. 5,000</p>
+          <div class="quantity-selector">
+            <button class="qty-btn" id="decrease-qty">-</button>
+            <span id="quantity">1</span>
+            <button class="qty-btn" id="increase-qty">+</button>
+          </div>
+          <button class="btn add-to-cart" id="add-to-cart-btn">Add to Cart</button>
+          <div class="product-tabs">
+            <button class="tab-btn active" data-tab="overview">Overview</button>
+            <button class="tab-btn" data-tab="shipping">Shipping Policy</button>
+          </div>
+          <div class="tab-content">
+            <div id="overview" class="tab-pane active">
+              <p>High-quality hoodie made with premium materials. Perfect for everyday wear with cyberpunk aesthetics.</p>
+            </div>
+            <div id="shipping" class="tab-pane">
+              <p>Free shipping on orders over Rs. 5,000. Delivery within 3-5 business days across Pakistan.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 SoulThread. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Theme Toggle -->
+  <div class="theme-toggle" id="theme-toggle">
+    <i class="fas fa-moon"></i>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Gallery Functionality
+    const thumbnails = document.querySelectorAll('.thumbnail');
+    const mainImage = document.getElementById('main-image');
+
+    thumbnails.forEach(thumbnail => {
+      thumbnail.addEventListener('click', () => {
+        mainImage.src = thumbnail.getAttribute('data-src');
+        thumbnails.forEach(t => t.classList.remove('active'));
+        thumbnail.classList.add('active');
+      });
+    });
+
+    // Tabs Functionality
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabPanes = document.querySelectorAll('.tab-pane');
+
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        tabBtns.forEach(b => b.classList.remove('active'));
+        tabPanes.forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById(btn.getAttribute('data-tab')).classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>

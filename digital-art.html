@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Art | SoulThread Syndicate</title>
+  <link rel="stylesheet" href="CSS/style.css">
+  <link rel="stylesheet" href="CSS/responsive.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="icon" type="image/png" href="Assets/images/logo-v3.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body class="store-page">
+
+  <!-- MAIN HEADER -->
+  <header class="header">
+    <div class="nav-container">
+      <a href="index.html" class="logo" style="display: flex; align-items: center;">
+        <img src="Assets/images/logo-v3.png" alt="SoulThread Logo" style="height: 50px; filter: drop-shadow(0 0 10px rgba(0, 174, 255, 0.4));">
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="store.html" class="active">Store</a>
+        <a href="commissions.html">Commissions</a>
+        <a href="apparel.html">Apparel</a>
+        <a href="blog.html">Blog</a>
+      </nav>
+      <div class="nav-actions">
+        <div class="cart-icon-wrap">
+          <i class="fas fa-shopping-bag"></i>
+          <span class="cart-badge">0</span>
+        </div>
+        <a href="login.html" class="login-btn">LOGIN</a>
+        <a href="signup.html" class="signup-btn">SIGN UP</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- CART DRAWER & OVERLAY -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-drawer-header">
+      <h2>SYNDICATE CART</h2>
+      <div class="close-cart" id="closeCart"><i class="fas fa-times"></i></div>
+    </div>
+    <div class="cart-items-list" id="cartItemsList">
+      <div class="empty-cart-msg">Your syndicate gear bag is empty.</div>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>TOTAL</span>
+        <span id="cartTotalDisplay">Rs 0</span>
+      </div>
+      <button class="checkout-btn">PROCEED TO CHECKOUT</button>
+    </div>
+  </div>
+
+  <main class="store-main">
+    <div class="store-title-wrap" style="text-align: center; margin: 80px 0 40px;">
+      <h1 style="font-family: 'Orbitron', sans-serif; font-size: 3.5rem; color: #fff; text-transform: uppercase; letter-spacing: 5px;">DIGITAL ART SERVICES</h1>
+      <p style="color: var(--accent); font-weight: 800; letter-spacing: 3px; text-transform: uppercase;">Elite Creative Asset Production</p>
+    </div>
+
+    <div class="store-content-layout" style="max-width: 1400px; margin: 0 auto; padding: 40px 20px; display: flex; gap: 40px;">
+      
+      <!-- Sidebar -->
+      <aside class="category-sidebar" style="flex: 0 0 300px; background: rgba(255,255,255,0.02); border: 1px solid rgba(0, 174, 255, 0.1); border-radius: 24px; padding: 30px; height: fit-content;">
+        <h3 style="font-family: 'Orbitron', sans-serif; font-size: 1.1rem; color: #fff; margin-bottom: 25px; border-bottom: 1px solid var(--accent); padding-bottom: 15px;">SERVICES</h3>
+        <ul style="list-style: none; padding: 0;">
+          <li style="margin-bottom: 15px;"><a href="custom-portraits.html" style="color: #64748b; text-decoration: none; font-weight: 700; transition: 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='#64748b'">Custom Portraits (15)</a></li>
+          <li style="margin-bottom: 15px;"><a href="mecha-designs.html" style="color: #64748b; text-decoration: none; font-weight: 700; transition: 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='#64748b'">Mecha Designs (4)</a></li>
+          <li style="margin-bottom: 15px;"><a href="character-sheets.html" style="color: #64748b; text-decoration: none; font-weight: 700; transition: 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='#64748b'">Character Sheets (8)</a></li>
+          <li style="margin-bottom: 15px;"><a href="logo-branding.html" style="color: #64748b; text-decoration: none; font-weight: 700; transition: 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='#64748b'">Logo Branding (10)</a></li>
+        </ul>
+      </aside>
+
+      <!-- Main Grid -->
+      <div class="raptr-store-grid" style="flex: 1; display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px;">
+        
+        <!-- Portrait 1 -->
+        <div class="product-card" data-category="digital art" data-price="8500" data-stock="false" data-commission="true">
+          <div class="wishlist-icon"><i class="far fa-heart"></i></div>
+          <div class="product-img">
+            <img src="Assets/images/Vibe-Check Portrait.png" alt="Vibe-Check Portrait" style="width: 100%; height: 320px; object-fit: cover; border-radius: 12px;">
+          </div>
+          <div class="product-info">
+            <h4>Syndicate Vibe-Check Portrait</h4>
+            <div class="product-price-row"><span>Rs 8,500</span></div>
+            <button class="buy-btn">REQUEST BRIEF</button>
+          </div>
+        </div>
+
+        <!-- Mecha 1 -->
+        <div class="product-card" data-category="digital art" data-price="25000" data-stock="false" data-commission="true">
+          <div class="wishlist-icon"><i class="far fa-heart"></i></div>
+          <div class="product-img">
+            <img src="Assets/images/Mecha Design Sheet.jpg" alt="Mecha Design" style="width: 100%; height: 320px; object-fit: cover; border-radius: 12px;">
+          </div>
+          <div class="product-info">
+            <h4>Full Mecha Concept Sheet</h4>
+            <div class="product-price-row"><span>Rs 25,000</span></div>
+            <button class="buy-btn">REQUEST BRIEF</button>
+          </div>
+        </div>
+
+        <!-- Sheet 1 -->
+        <div class="product-card" data-category="digital art" data-price="22000" data-stock="false" data-commission="true">
+          <div class="wishlist-icon"><i class="far fa-heart"></i></div>
+          <div class="product-img">
+            <img src="Assets/images/Custom OC Reference Sheet.jpg" alt="OC Reference Sheet" style="width: 100%; height: 320px; object-fit: cover; border-radius: 12px;">
+          </div>
+          <div class="product-info">
+            <h4>Custom OC Reference Sheet</h4>
+            <div class="product-price-row"><span>Rs 22,000</span></div>
+            <button class="buy-btn">REQUEST BRIEF</button>
+          </div>
+        </div>
+
+        <!-- Logo 1 -->
+        <div class="product-card" data-category="digital art" data-price="15000" data-stock="false" data-commission="true">
+          <div class="wishlist-icon"><i class="far fa-heart"></i></div>
+          <div class="product-img">
+            <img src="Assets/images/Vector Art Logo Design.1.jpg" alt="Logo Design" style="width: 100%; height: 320px; object-fit: cover; border-radius: 12px;">
+          </div>
+          <div class="product-info">
+            <h4>Elite Vector Logo Design</h4>
+            <div class="product-price-row"><span>Rs 15,000</span></div>
+            <button class="buy-btn">REQUEST BRIEF</button>
+          </div>
+        </div>
+
+        <!-- Portrait 2 -->
+        <div class="product-card" data-category="digital art" data-price="12000" data-stock="false" data-commission="true">
+          <div class="wishlist-icon"><i class="far fa-heart"></i></div>
+          <div class="product-img">
+            <img src="Assets/images/Digital Concept Art.1.jpg" alt="Concept Art Portrait" style="width: 100%; height: 320px; object-fit: cover; border-radius: 12px;">
+          </div>
+          <div class="product-info">
+            <h4>High-Fidelity Concept Portrait</h4>
+            <div class="product-price-row"><span>Rs 12,000</span></div>
+            <button class="buy-btn">REQUEST BRIEF</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-bottom">
+      <div class="footer-bottom-container">
+        <p>© 2026 SoulThread Syndicate. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="JS files/main.js"></script>
+</body>
+</html>

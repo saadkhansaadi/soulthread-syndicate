@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout | SoulThread Syndicate</title>
+  <link rel="stylesheet" href="CSS/style.css">
+  <link rel="stylesheet" href="CSS/responsive.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="Assets/images/logo-v3.png">
+  <style>
+    body.checkout-page { background: #0a0a0b; color: #fff; }
+    
+    .checkout-main { max-width: 1200px; margin: 80px auto; padding: 0 20px; display: grid; grid-template-columns: 1.5fr 1fr; gap: 60px; }
+    
+    .checkout-form-container { background: rgba(15, 15, 18, 0.6); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.05); border-radius: 24px; padding: 40px; }
+    
+    .step-indicator { display: flex; gap: 20px; margin-bottom: 50px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 20px; }
+    .step { font-size: 0.75rem; font-weight: 900; color: #444; text-transform: uppercase; letter-spacing: 2px; display: flex; align-items: center; gap: 10px; }
+    .step.active { color: var(--raptr-cyan); }
+    .step-num { width: 25px; height: 25px; border-radius: 50%; border: 1px solid #444; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; }
+    .step.active .step-num { border-color: var(--raptr-cyan); background: rgba(0, 242, 255, 0.1); }
+    
+    .checkout-section { display: none; }
+    .checkout-section.active { display: block; animation: fadeIn 0.5s ease; }
+    
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    
+    .checkout-section h2 { font-size: 1.8rem; font-weight: 900; margin-bottom: 30px; letter-spacing: 1px; }
+    
+    .form-group { margin-bottom: 25px; }
+    .form-group label { display: block; font-size: 0.7rem; font-weight: 900; color: #666; margin-bottom: 10px; text-transform: uppercase; }
+    .form-group input, .form-group select { width: 100%; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); padding: 15px; border-radius: 10px; color: #fff; font-size: 1rem; transition: 0.3s; }
+    .form-group input:focus { outline: none; border-color: var(--raptr-cyan); box-shadow: 0 0 15px rgba(0, 242, 255, 0.1); }
+    
+    .payment-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .payment-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); padding: 25px; border-radius: 15px; cursor: pointer; transition: 0.3s; text-align: center; }
+    .payment-card:hover { border-color: var(--raptr-blue); background: rgba(0, 132, 255, 0.05); }
+    .payment-card.active { border-color: var(--raptr-cyan); background: rgba(0, 242, 255, 0.1); box-shadow: 0 0 20px rgba(0, 242, 255, 0.1); }
+    .payment-card i { font-size: 2rem; color: var(--raptr-cyan); margin-bottom: 15px; display: block; }
+    .payment-card span { font-weight: 800; font-size: 0.9rem; color: #fff; }
+    
+    /* Right: Summary Redesign */
+    .summary-container { background: rgba(10, 10, 11, 0.8); backdrop-filter: blur(40px); border-radius: 24px; padding: 40px; border: 1px solid rgba(0, 242, 255, 0.1); height: fit-content; position: sticky; top: 120px; box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
+    .summary-container h3 { font-size: 1.2rem; font-weight: 900; margin-bottom: 30px; letter-spacing: 2px; color: var(--raptr-cyan); display: flex; align-items: center; gap: 15px; }
+    .summary-container h3::after { content: ''; flex-grow: 1; height: 1px; background: rgba(0, 242, 255, 0.2); }
+    
+    .checkout-summary-item { display: flex; justify-content: space-between; align-items: center; padding: 15px; background: rgba(255,255,255,0.03); border-radius: 12px; margin-bottom: 12px; border: 1px solid rgba(255,255,255,0.05); transition: 0.3s; }
+    .checkout-summary-item:hover { border-color: rgba(0, 242, 255, 0.3); background: rgba(255,255,255,0.05); }
+    .checkout-summary-item .item-meta { display: flex; flex-direction: column; gap: 4px; }
+    .checkout-summary-item .item-title { font-size: 0.85rem; font-weight: 800; color: #fff; }
+    .checkout-summary-item .item-qty { font-size: 0.7rem; color: #555; font-weight: 900; }
+    .checkout-summary-item .item-price { color: var(--raptr-cyan); font-weight: 900; font-size: 0.9rem; text-shadow: 0 0 10px rgba(0, 242, 255, 0.3); }
+
+    .summary-item { display: flex; justify-content: space-between; margin-bottom: 15px; font-size: 0.9rem; font-weight: 700; color: #666; }
+    .summary-total { display: flex; justify-content: space-between; margin-top: 30px; padding-top: 25px; border-top: 2px solid rgba(0, 242, 255, 0.1); }
+    .summary-total span:first-child { color: #fff; font-weight: 900; letter-spacing: 2px; font-size: 0.8rem; }
+    .summary-total #total { color: #fff; font-weight: 900; font-size: 2rem; text-shadow: 0 0 30px rgba(255, 255, 255, 0.5); }
+    
+    .checkout-btn { width: 100%; padding: 20px; background: var(--raptr-blue); color: #fff; border: none; border-radius: 12px; font-weight: 900; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 2px; cursor: pointer; transition: 0.4s; margin-top: 40px; }
+    .checkout-btn:hover { background: var(--raptr-cyan); color: #000; box-shadow: 0 0 40px var(--raptr-cyan); transform: translateY(-5px); }
+    
+    @media (max-width: 1000px) { .checkout-main { grid-template-columns: 1fr; } .summary-container { position: relative; top: 0; } }
+  </style>
+</head>
+<body class="checkout-page">
+
+  <!-- Header -->
+  <header class="header">
+    <div class="nav-container">
+      <a href="index.html" class="logo" style="display: flex; align-items: center;">
+        <img src="Assets/images/logo-v3.png" alt="SoulThread Logo" style="height: 50px; filter: drop-shadow(0 0 10px rgba(0, 174, 255, 0.4));">
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="store.html">Store</a>
+        <a href="commissions.html">Commissions</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="checkout-main">
+    <!-- Left: Forms -->
+    <div class="checkout-form-container">
+      <div class="step-indicator">
+        <div class="step active" id="step1-tab"><div class="step-num">1</div> Shipping</div>
+        <div class="step" id="step2-tab"><div class="step-num">2</div> Payment</div>
+        <div class="step" id="step3-tab"><div class="step-num">3</div> Finish</div>
+      </div>
+
+      <!-- Section 1: Shipping -->
+      <div class="checkout-section active" id="section-shipping">
+        <h2>SHIPPING PROTOCOL</h2>
+        <form id="shippingForm">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <div class="form-group"><label>First Name</label><input type="text" placeholder="John" required></div>
+            <div class="form-group"><label>Last Name</label><input type="text" placeholder="Doe" required></div>
+          </div>
+          <div class="form-group"><label>Email Address</label><input type="email" placeholder="agent@soulthread.com" required></div>
+          <div class="form-group"><label>Street Address</label><input type="text" placeholder="Sector 7, Night City" required></div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <div class="form-group"><label>City</label><input type="text" placeholder="Karachi" required></div>
+            <div class="form-group"><label>Postal Code</label><input type="text" placeholder="75500" required></div>
+          </div>
+          <button type="button" class="checkout-btn" onclick="goToStep(2)">Proceed to Payment</button>
+        </form>
+      </div>
+
+      <!-- Section 2: Payment -->
+      <div class="checkout-section" id="section-payment">
+        <h2>SECURE PAYMENT</h2>
+        <div class="payment-grid">
+          <div class="payment-card active"><i class="fas fa-wallet"></i><span>JazzCash / EasyPaisa</span></div>
+          <div class="payment-card"><i class="fas fa-credit-card"></i><span>Credit Card</span></div>
+          <div class="payment-card"><i class="fas fa-university"></i><span>Bank Transfer</span></div>
+          <div class="payment-card"><i class="fas fa-coins"></i><span>Crypto (USDT)</span></div>
+        </div>
+        <button type="button" class="checkout-btn" onclick="goToStep(3)">Review & Confirm</button>
+        <p style="text-align: center; margin-top: 20px;"><a href="#" onclick="goToStep(1)" style="color: #666; font-size: 0.8rem;">Back to Shipping</a></p>
+      </div>
+
+      <!-- Section 3: Final -->
+      <div class="checkout-section" id="section-finish">
+        <h2>AUTHORIZE ORDER</h2>
+        <p style="color: #999; line-height: 1.6; margin-bottom: 40px;">Please review your order details on the right. By clicking "Authorize Order", you agree to the Syndicate terms of service.</p>
+        <div style="background: rgba(0, 242, 255, 0.05); padding: 30px; border-radius: 15px; border: 1px solid rgba(0, 242, 255, 0.1);">
+          <h4 style="color: var(--raptr-cyan); margin-bottom: 10px;">SECURE PROTOCOL</h4>
+          <p style="font-size: 0.85rem; color: #888;">Your order will be processed through our encrypted syndicate servers. Delivery expected within 3-5 standard cycles.</p>
+        </div>
+        <button type="button" class="checkout-btn" onclick="placeOrder()">Authorize Order</button>
+      </div>
+    </div>
+
+    <!-- Right: Summary -->
+    <div class="summary-container">
+      <h3>ORDER SUMMARY</h3>
+      <div id="checkoutItemsList">
+        <!-- Dynamically filled -->
+      </div>
+      <div style="margin-top: 30px;">
+        <div class="summary-item"><span>Subtotal</span><span id="subtotal">Rs 0</span></div>
+        <div class="summary-item"><span>Shipping Fee</span><span style="color: var(--raptr-cyan);">Rs 250</span></div>
+        <div class="summary-total"><span>TOTAL PAYABLE</span><span id="total">Rs 0</span></div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Checkout Footer -->
+  <footer class="footer" style="padding: 60px 0; border-top: 1px solid rgba(0, 242, 255, 0.1); margin-top: 100px;">
+    <div class="nav-container" style="text-align: center;">
+      <a href="index.html" class="logo" style="display: block; margin-bottom: 30px;">
+        <img src="Assets/images/logo-v3.png" alt="SoulThread Logo" style="height: 60px; filter: drop-shadow(0 0 15px rgba(0, 174, 255, 0.3));">
+      </a>
+      <div class="footer-bottom-links" style="display: flex; justify-content: center; gap: 30px; margin-bottom: 30px;">
+        <a href="privacy.html" style="color: #666; font-size: 0.8rem; text-decoration: none;">Privacy Policy</a>
+        <a href="terms.html" style="color: #666; font-size: 0.8rem; text-decoration: none;">Terms of Service</a>
+        <a href="faq.html" style="color: #666; font-size: 0.8rem; text-decoration: none;">FAQ</a>
+        <a href="safety.html" style="color: #666; font-size: 0.8rem; text-decoration: none;">Trust & Safety</a>
+      </div>
+      <p style="color: #333; font-size: 0.75rem;">© 2026 SoulThread Syndicate. Secure Checkout Active. All systems operational.</p>
+    </div>
+  </footer>
+
+  <script>
+    function goToStep(step) {
+      document.querySelectorAll('.checkout-section').forEach(s => s.classList.remove('active'));
+      document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+      
+      if (step === 1) {
+        document.getElementById('section-shipping').classList.add('active');
+        document.getElementById('step1-tab').classList.add('active');
+      } else if (step === 2) {
+        document.getElementById('section-payment').classList.add('active');
+        document.getElementById('step1-tab').classList.add('active');
+        document.getElementById('step2-tab').classList.add('active');
+      } else if (step === 3) {
+        document.getElementById('section-finish').classList.add('active');
+        document.getElementById('step1-tab').classList.add('active');
+        document.getElementById('step2-tab').classList.add('active');
+        document.getElementById('step3-tab').classList.add('active');
+      }
+    }
+
+    function placeOrder() {
+      alert('ORDER AUTHORIZED! Your gear is being prepared for transport.');
+      localStorage.removeItem('soulthread_cart');
+      window.location.href = 'index.html';
+    }
+
+    function loadCheckoutSummary() {
+      const cart = JSON.parse(localStorage.getItem('soulthread_cart')) || [];
+      const list = document.getElementById('checkoutItemsList');
+      const subtotalEl = document.getElementById('subtotal');
+      const totalEl = document.getElementById('total');
+      
+      if (!list) return;
+      
+      if (cart.length === 0) {
+        list.innerHTML = '<p style="color: #444;">No items in bag.</p>';
+        return;
+      }
+      
+      list.innerHTML = '';
+      let subtotal = 0;
+      
+      cart.forEach(item => {
+        subtotal += item.price * item.quantity;
+        const div = document.createElement('div');
+        div.className = 'checkout-summary-item';
+        div.innerHTML = `
+          <div class="item-meta">
+            <span class="item-title">${item.name}</span>
+            <span class="item-qty">QUANTITY: ${item.quantity}</span>
+          </div>
+          <span class="item-price">Rs ${(item.price * item.quantity).toLocaleString()}</span>
+        `;
+        list.appendChild(div);
+      });
+      
+      subtotalEl.innerText = `Rs ${subtotal.toLocaleString()}`;
+      totalEl.innerText = `Rs ${(subtotal + 250).toLocaleString()}`;
+    }
+
+    loadCheckoutSummary();
+  </script>
+</body>
+</html>

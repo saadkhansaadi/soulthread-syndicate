@@ -1,0 +1,178 @@
+/* ============================================================
+   SOULTHREAD SYNDICATE - RESTORED MOBILE OPTIMIZATION
+   Strictly targets < 1024px to protect Desktop View
+   ============================================================ */
+
+@media (max-width: 1024px) {
+
+  /* 1. NAV & HEADER REPAIR */
+  .header {
+    height: 65px !important;
+    padding: 0 10px !important;
+  }
+
+  .nav-container {
+    flex-wrap: nowrap !important; /* Keep logo and actions on one line */
+    justify-content: space-between !important;
+    padding: 0 10px !important;
+  }
+
+  /* Hamburger Icon (3 White Bars) */
+  .hamburger {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    cursor: pointer;
+    z-index: 1502 !important;
+    order: 3; /* Ensure it's on the right */
+  }
+
+  .hamburger span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background: #ffffff !important; /* Force white bars */
+    border-radius: 4px;
+    transition: 0.3s;
+  }
+
+  /* Navigation Drawer (Slide from Left) */
+  .nav-links {
+    display: none !important; /* Initially hidden */
+    flex-direction: column !important;
+    position: fixed !important;
+    top: 65px !important;
+    left: -100% !important;
+    width: 80% !important;
+    max-width: 300px !important;
+    height: calc(100vh - 65px) !important;
+    background: #0a0a0a !important;
+    border-right: 2px solid #00aeef !important;
+    padding: 40px 20px !important;
+    z-index: 1501 !important;
+    gap: 15px !important;
+    transition: left 0.4s ease !important;
+    overflow-y: auto !important;
+    transform: none !important; /* Override desktop transform */
+    margin: 0 !important;
+  }
+
+  .nav-links.active {
+    display: flex !important;
+    left: 0 !important;
+  }
+
+  .nav-links a {
+    color: #ffffff !important;
+    font-size: 1.1rem !important;
+    padding: 12px 0 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+    width: 100% !important;
+    text-align: left !important;
+  }
+
+  /* Auth Buttons on Mobile */
+  .auth-btns {
+    display: none !important; /* Hide in header, move to drawer if needed */
+  }
+
+  /* 2. PRODUCT GRID & STORE REPAIR */
+  .raptr-store-grid, .products-grid, .product-grid {
+    grid-template-columns: repeat(2, 1fr) !important; /* 2 Columns max */
+    gap: 12px !important;
+    width: 100% !important;
+  }
+
+  .product-card {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  .product-card .product-img img {
+    height: 180px !important;
+  }
+
+  .store-main-layout {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .sidebar {
+    width: 100% !important;
+    margin-bottom: 20px !important;
+    position: static !important;
+  }
+
+  /* 3. HOMEPAGE & FOOTER REPAIR */
+  .hero-swiper-section .swiper-slide img {
+    aspect-ratio: 16 / 9 !important;
+    height: auto !important;
+    object-fit: cover !important;
+  }
+
+  .hero-swiper-section {
+    min-height: auto !important;
+    padding-top: 20px !important;
+  }
+
+  .swiper-slide-content h2 {
+    font-size: 1.5rem !important;
+  }
+
+  /* Advantage Grid / Categories Stacking */
+  .advantage-grid, .categories-grid, .trust-bar, .promo-container {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+  }
+
+  /* Footer Repair */
+  .footer-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 40px !important;
+  }
+
+  .footer-col {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 20px !important;
+  }
+
+  .social-icons-row {
+    justify-content: center !important;
+  }
+
+  .footer-bottom-container {
+    flex-direction: column !important;
+    gap: 15px !important;
+    text-align: center !important;
+  }
+
+  .footer-bottom-links {
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 10px !important;
+  }
+
+  /* General Safety */
+  body {
+    overflow-x: hidden !important;
+    width: 100% !important;
+  }
+
+  section {
+    padding: 40px 15px !important;
+  }
+}
+
+/* Very small screens */
+@media (max-width: 480px) {
+  .raptr-store-grid, .products-grid, .product-grid {
+    grid-template-columns: 1fr !important; /* 1 Column for tiny phones */
+  }
+}

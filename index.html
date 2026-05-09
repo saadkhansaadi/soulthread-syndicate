@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SoulThread | Art Syndicate</title>
+  <link rel="icon" type="image/png" href="Assets/images/logo-v3.png">
+  <link rel="stylesheet" href="CSS/style.css">
+  <link rel="stylesheet" href="CSS/responsive.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Orbitron:wght@400;700;900&display=swap"
+    rel="stylesheet">
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <!-- Theme Persistence Blocker (Prevents White Flash) -->
+  <script>
+    if (localStorage.getItem('theme') === 'light') {
+      document.documentElement.classList.add('light-mode');
+    }
+  </script>
+</head>
+
+<body class="home-page">
+
+  <!-- MAIN HEADER -->
+  <!-- 0. TOP ANNOUNCEMENT ALERT -->
+  <div class="top-alert-bar"
+    style="background: linear-gradient(90deg, var(--accent), #004466); color: #fff; text-align: center; padding: 10px 0; font-size: 0.8rem; font-weight: 900; letter-spacing: 2px; position: relative; z-index: 2000; text-transform: uppercase; overflow: hidden; border-bottom: 1px solid rgba(0, 174, 255, 0.3);">
+    <div class="alert-content"
+      style="display: inline-block; white-space: nowrap; animation: marqueeTop 20s linear infinite;">
+      ⚡ ATTENTION AGENT: FREE WORLDWIDE SHIPPING ON ALL ORDERS OVER Rs 10,000 // NEW MECHA HOODIE DROP COMING SOON //
+      ESTABLISH YOUR SYNDICATE IDENTITY TODAY ⚡
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="nav-container">
+      <a href="index.html" class="logo" style="display: flex; align-items: center;">
+        <img src="Assets/images/logo-v3.png" alt="SoulThread Logo"
+          style="height: 50px; filter: drop-shadow(0 0 10px rgba(0, 174, 255, 0.4));">
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <div class="dropdown">
+          <a href="store.html" class="active dropdown-trigger">Store <i class="fas fa-chevron-down"
+              style="font-size: 0.6rem; margin-left: 5px;"></i></a>
+          <div class="dropdown-content">
+            <a href="apparel.html"><i class="fas fa-tshirt"></i> Apparel</a>
+            <a href="manga.html"><i class="fas fa-book-open"></i> Manga</a>
+            <a href="logos.html"><i class="fas fa-pen-nib"></i> Logos</a>
+            <a href="characters.html"><i class="fas fa-user-ninja"></i> Characters</a>
+            <a href="digital-art.html"><i class="fas fa-palette"></i> Digital Art</a>
+            <a href="prints.html"><i class="fas fa-print"></i> Prints</a>
+          </div>
+        </div>
+        <a href="commissions.html">Commissions</a>
+        <a href="blog.html">Blog</a>
+      </nav>
+      <div class="nav-actions">
+        <div class="cart-icon-wrap">
+          <i class="fas fa-shopping-bag"></i>
+          <span class="cart-badge">0</span>
+        </div>
+        <div class="auth-btns">
+          <a href="login.html" class="login-btn">LOGIN</a>
+          <a href="signup.html" class="signup-btn">SIGN UP</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 1. HERO SLIDER (3D SWIPER ENGINE) -->
+    <section class="hero-swiper-section">
+
+      <!-- Swiper -->
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+
+          <!-- Slide 1 -->
+          <div class="swiper-slide">
+            <img src="Assets/images/Profile Picture Design.jpg" alt="Night City Persona">
+            <div class="swiper-slide-content">
+              <h2 style="font-size: 3rem; text-transform: uppercase; text-shadow: 0px 5px 15px rgba(0,0,0,0.8);">
+                Digital Portrait</h2>
+              <a href="store.html" class="explore-btn">
+                Explore Now <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="swiper-slide">
+            <img src="Assets/images/Manga Hero Portrait.6.jpg" alt="Custom Manga Art">
+            <div class="swiper-slide-content">
+              <h2 style="font-size: 3rem; text-transform: uppercase; text-shadow: 0px 5px 15px rgba(0,0,0,0.8);">
+                Manga Art</h2>
+              <a href="commissions.html" class="explore-btn">
+                Explore Now <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="swiper-slide">
+            <img src="Assets/images/hero_bg_1777238662886.png" alt="Cyber-Neon Gear">
+            <div class="swiper-slide-content">
+              <h2 style="font-size: 3rem; text-transform: uppercase; text-shadow: 0px 5px 15px rgba(0,0,0,0.8);">
+                Custom Illustration</h2>
+              <a href="apparel.html" class="explore-btn">
+                Explore Now <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Slide 4 (Duplicate for Loop Density) -->
+          <div class="swiper-slide">
+            <img src="Assets/images/Ronin Stealth Hoodie.jpg" alt="Ronin Stealth Hoodie">
+            <div class="swiper-slide-content">
+              <h2 style="font-size: 3rem; text-transform: uppercase; text-shadow: 0px 5px 15px rgba(0,0,0,0.8);">
+                Apparel & Hoodies</h2>
+              <a href="store.html" class="explore-btn">
+                Explore Now <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Slide 5 (Duplicate for Loop Density) -->
+          <div class="swiper-slide">
+            <img src="Assets/images/Full Body Character Art.jpg" alt="Custom Manga Art">
+            <div class="swiper-slide-content">
+              <h2 style="font-size: 3rem; text-transform: uppercase; text-shadow: 0px 5px 15px rgba(0,0,0,0.8);">
+                Character Design</h2>
+              <a href="commissions.html" class="explore-btn">
+                Explore Now <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Slide 6 (Duplicate for Loop Density) -->
+          <div class="swiper-slide">
+            <img src="Assets/images/product_art_1777236847250.png" alt="Cyber-Neon Gear">
+            <div class="swiper-slide-content">
+              <h2 style="font-size: 3rem; text-transform: uppercase; text-shadow: 0px 5px 15px rgba(0,0,0,0.8);">Limited
+                Drops</h2>
+              <a href="apparel.html" class="explore-btn">
+                Explore Now <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- HERO BRAND INTRO: SYNDICATE BRIEF -->
+      <div class="hero-brand-intro" style="margin-top: 60px; padding: 0 20px;">
+        <div
+          style="display: inline-block; background: rgba(0, 174, 255, 0.1); border: 1px solid var(--accent); padding: 5px 15px; border-radius: 4px; margin-bottom: 25px;">
+          <span
+            style="color: var(--accent); font-weight: 900; font-size: 0.75rem; letter-spacing: 2px; font-family: 'Orbitron', sans-serif;">//
+            SYNDICATE BRIEF: 04-B</span>
+        </div>
+        <h2
+          style="font-family: 'Orbitron', sans-serif; font-size: 2.8rem; font-weight: 900; color: #fff; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 25px; line-height: 1.1;">
+          Elevate Your Reality with <span style="color: var(--accent);">SoulThread</span> Syndicate
+        </h2>
+        <p
+          style="color: #64748b; font-size: 1.2rem; line-height: 1.8; max-width: 900px; margin: 0 auto; font-weight: 500;">
+          Get exclusive, premium-quality <span style="color: #fff;">streetwear</span> including hoodies and techwear
+          designed for the modern era. We specialize in <span style="color: #fff;">custom digital art</span> commissions
+          and unique character identities tailored to your vision. Experience the intersection of fashion and digital
+          creativity with secure, instant delivery.
+        </p>
+      </div>
+    </section>
+
+    <!-- 1.5 BRANDED SCROLLING MARQUEE -->
+    <div class="branded-marquee"
+      style="background: rgba(0, 174, 255, 0.05); border-top: 1px solid rgba(0, 174, 255, 0.1); border-bottom: 1px solid rgba(0, 174, 255, 0.1); padding: 25px 0; overflow: hidden; white-space: nowrap;">
+      <div
+        style="display: inline-block; animation: marqueeScroll 30s linear infinite; font-family: 'Orbitron', sans-serif; font-weight: 900; font-size: 1.2rem; color: rgba(0, 174, 255, 0.3); letter-spacing: 5px; text-transform: uppercase;">
+        ELITE ARTISTRY // TACTICAL GEAR // GLOBAL SYNDICATE // CUSTOM COMMISSIONS // PREMIUM QUALITY // ELITE ARTISTRY
+        // TACTICAL GEAR // GLOBAL SYNDICATE // CUSTOM COMMISSIONS // PREMIUM QUALITY
+      </div>
+    </div>
+
+    <!-- 2. SYNDICATE DASHBOARD (UPGRADED TRUST BAR) -->
+    <section class="trust-bar"
+      style="padding: 80px 0 40px; background: linear-gradient(180deg, rgba(10,10,10,0) 0%, rgba(10,10,10,1) 100%);">
+      <div class="nav-container" style="display: block;">
+
+        <!-- Mission Brief Overlay -->
+        <div class="hero-brief"
+          style="text-align: center; max-width: 900px; margin: 0 auto 70px; position: relative; z-index: 10;">
+          <h3
+            style="color: var(--accent); font-weight: 900; letter-spacing: 5px; text-transform: uppercase; margin-bottom: 25px; font-size: 0.9rem; font-family: 'Orbitron', sans-serif;">
+            // NEURAL LINK ESTABLISHED</h3>
+          <p style="color: #64748b; line-height: 2; font-size: 1.2rem; font-weight: 500; letter-spacing: 0.5px;">
+            SoulThread is a decentralized creative syndicate bridging the gap between <span style="color: #fff;">elite
+              digital illustration</span> and <span style="color: #fff;">tactical streetwear</span>. Every piece is a
+            certified asset of the collective.
+          </p>
+        </div>
+
+        <!-- Dashboard Grid -->
+        <div class="trust-container"
+          style="display: flex; justify-content: space-around; align-items: center; background: rgba(255,255,255,0.02); padding: 50px; border-radius: 24px; border: 1px solid rgba(0, 174, 255, 0.1); backdrop-filter: blur(25px); flex-wrap: wrap; gap: 40px; box-shadow: 0 20px 50px rgba(0,0,0,0.3);">
+          <div class="trust-item" style="text-align: center; flex: 1; min-width: 180px;">
+            <div class="trust-icon" style="font-size: 2.5rem; color: var(--accent); margin-bottom: 20px;"><i
+                class="fas fa-fingerprint"></i></div>
+            <div style="font-size: 2rem; font-weight: 900; color: #fff; letter-spacing: 1px;">100%</div>
+            <span
+              style="color: #64748b; font-size: 0.8rem; letter-spacing: 2px; font-weight: 800; text-transform: uppercase;">Unique
+              Assets</span>
+          </div>
+
+          <div class="trust-item" style="text-align: center; flex: 1; min-width: 180px;">
+            <div class="trust-icon" style="font-size: 2.5rem; color: var(--accent); margin-bottom: 20px;"><i
+                class="fas fa-microchip"></i></div>
+            <div style="font-size: 2rem; font-weight: 900; color: #fff; letter-spacing: 1px;">500+</div>
+            <span
+              style="color: #64748b; font-size: 0.8rem; letter-spacing: 2px; font-weight: 800; text-transform: uppercase;">Custom
+              Orders</span>
+          </div>
+
+          <div class="trust-item" style="text-align: center; flex: 1; min-width: 180px;">
+            <div class="trust-icon" style="font-size: 2.5rem; color: var(--accent); margin-bottom: 20px;"><i
+                class="fas fa-globe"></i></div>
+            <div style="font-size: 2rem; font-weight: 900; color: #fff; letter-spacing: 1px;">GLOBAL</div>
+            <span
+              style="color: #64748b; font-size: 0.8rem; letter-spacing: 2px; font-weight: 800; text-transform: uppercase;">Syndicate
+              Nodes</span>
+          </div>
+
+          <div class="trust-item" style="text-align: center; flex: 1; min-width: 180px;">
+            <div class="trust-icon" style="font-size: 2.5rem; color: var(--accent); margin-bottom: 20px;"><i
+                class="fas fa-shield-halved"></i></div>
+            <div style="font-size: 2rem; font-weight: 900; color: #fff; letter-spacing: 1px;">SECURE</div>
+            <span
+              style="color: #64748b; font-size: 0.8rem; letter-spacing: 2px; font-weight: 800; text-transform: uppercase;">Verified
+              Protocol</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PREMIUM SERVICE GRID -->
+    <section class="premium-services" style="padding: 60px 0;">
+      <div class="nav-container">
+        <div class="premium-grid">
+
+          <!-- Card 1: The Custom Lab -->
+          <div class="premium-card">
+            <div class="premium-card-bg" style="background-image: url('Assets/images/hero_image_1777236663611.png');">
+            </div>
+            <div class="premium-card-content">
+              <h2>The Custom Lab</h2>
+              <p>Get your unique character designs and logos made from scratch.</p>
+              <a href="commissions.html" class="premium-btn">Start Commission</a>
+            </div>
+          </div>
+
+          <!-- Card 2: Digital Gallery -->
+          <div class="premium-card">
+            <div class="premium-card-bg" style="background-image: url('Assets/images/Premium Signature Portrait.png');">
+            </div>
+            <div class="premium-card-content">
+              <h2>Digital Gallery</h2>
+              <p>High-resolution Manga and Concept Art for your collection.</p>
+              <a href="store.html" class="premium-btn">Browse Art</a>
+            </div>
+          </div>
+
+          <!-- Card 3: Exclusive Gear -->
+          <div class="premium-card">
+            <div class="premium-card-bg" style="background-image: url('Assets/images/hoodie_prod_1777238758809.png');">
+            </div>
+            <div class="premium-card-content">
+              <h2>Exclusive Gear</h2>
+              <p>Limited edition apparel you won't find anywhere else.</p>
+              <a href="apparel.html" class="premium-btn">View Shop</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- START YOUR PROJECT (CONSISTENT GRID) -->
+    <section class="process-section">
+      <div class="nav-container">
+        <div class="store-title-wrap">
+          <p style="color: var(--raptr-blue); font-weight: 800; margin-bottom: 10px;">3 SIMPLE STEPS</p>
+          <h1>START YOUR PROJECT</h1>
+        </div>
+        <div class="process-grid">
+          <div class="process-card">
+            <i class="fas fa-palette"></i>
+            <h3>Choose Your Style</h3>
+            <p>Pick from our premium apparel collection or select an art style for your custom piece.</p>
+          </div>
+          <div class="process-card">
+            <i class="fas fa-comments"></i>
+            <h3>Share Your Vision</h3>
+            <p>Chat with our artists or upload your brief. We turn your ideas into high-fidelity drafts.</p>
+          </div>
+          <div class="process-card">
+            <i class="fas fa-box-open"></i>
+            <h3>Receive Masterpiece</h3>
+            <p>Get your digital files instantly or wait for your museum-grade apparel delivery.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FLASH DEALS (URGENCY GRID WITH RED GLOW) -->
+    <section class="flash-deals"
+      style="padding: 100px 0; background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(255,0,0,0.05) 50%, rgba(0,0,0,0) 100%); position: relative; overflow: hidden;">
+
+      <!-- Intense Red Background Pulse -->
+      <div class="flash-glow-overlay"
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 50% 50%, rgba(255,0,0,0.1), transparent 70%); animation: flashPulse 4s infinite alternate; pointer-events: none;">
+      </div>
+
+      <div class="nav-container" style="display: block; text-align: center; position: relative; z-index: 5;">
+
+        <!-- Header with Intense Red Glow -->
+        <div class="store-title-wrap" style="text-align: center; margin-bottom: 40px;">
+          <p
+            style="color: #ff3333; font-weight: 900; margin-bottom: 15px; letter-spacing: 5px; text-transform: uppercase; text-shadow: 0 0 15px rgba(255,0,0,0.6); animation: textGlow 2s infinite alternate;">
+            LIMITED TIME OFFER</p>
+          <h1
+            style="font-size: 4rem; font-weight: 950; letter-spacing: 2px; color: #fff; text-transform: uppercase; text-shadow: 0 0 30px rgba(255,0,0,0.8);">
+            DAILY FLASH DEALS</h1>
+        </div>
+
+        <!-- Floating Countdown Timer -->
+        <div class="countdown-timer" id="flashCountdown" style="
+          display: inline-block;
+          font-size: 3.5rem;
+          font-weight: 900;
+          color: #ff0000;
+          background: rgba(0,0,0,0.4);
+          padding: 20px 40px;
+          border-radius: 12px;
+          border: 2px solid #ff0000;
+          box-shadow: 0 0 30px rgba(255,0,0,0.5), inset 0 0 20px rgba(255,0,0,0.2);
+          margin-bottom: 60px;
+          animation: floatAndGlow 3s ease-in-out infinite;
+          font-family: 'Orbitron', sans-serif;
+        ">
+          04:20:59
+        </div>
+
+        <div class="raptr-store-grid"
+          style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; justify-content: center; justify-items: center;">
+
+          <style>
+            @keyframes flashPulse {
+              0% {
+                opacity: 0.3;
+              }
+
+              100% {
+                opacity: 0.8;
+              }
+            }
+
+            @keyframes textGlow {
+              0% {
+                text-shadow: 0 0 5px rgba(255, 0, 0, 0.4);
+              }
+
+              100% {
+                text-shadow: 0 0 20px rgba(255, 0, 0, 1);
+              }
+            }
+
+            @keyframes floatAndGlow {
+
+              0%,
+              100% {
+                transform: translateY(0);
+                box-shadow: 0 0 30px rgba(255, 0, 0, 0.5);
+              }
+
+              50% {
+                transform: translateY(-15px);
+                box-shadow: 0 0 50px rgba(255, 0, 0, 0.8);
+              }
+            }
+
+            .flash-deals .product-card {
+              border: 1px solid rgba(255, 0, 0, 0.3) !important;
+              transition: 0.4s;
+            }
+
+            .flash-deals .product-card:hover {
+              border-color: #ff0000 !important;
+              box-shadow: 0 0 30px rgba(255, 0, 0, 0.4) !important;
+              transform: scale(1.03);
+            }
+
+            .flash-deals .buy-btn {
+              background: #ff0000 !important;
+              box-shadow: 0 0 15px rgba(255, 0, 0, 0.5) !important;
+            }
+          </style>
+          <!-- Card 1 -->
+          <div class="product-card">
+            <div class="product-img">
+              <img src="Assets/images/Cyber-Neon Hoodie V1.jpg"
+                style="width: 100%; height: 280px; object-fit: cover; aspect-ratio: 1/1; border-radius: 12px; filter: brightness(0.8) contrast(1.1);">
+              <img src="Assets/images/Cyber-Neon Hoodie V1.jpg" class="back-view"
+                style="width: 100%; height: 280px; object-fit: cover; aspect-ratio: 1/1; border-radius: 12px; filter: brightness(0.8) contrast(1.1);">
+            </div>
+            <div class="product-info">
+              <div class="product-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                  class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+              <h4>Neon Hoodie</h4>
+              <div class="product-price-row"><span>Rs 4,000</span></div>
+              <button class="buy-btn">ADD TO CART</button>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div class="product-card">
+            <div class="product-img">
+              <img src="Assets/images/Manga Commission - Style A.jpg"
+                style="width: 100%; height: 280px; object-fit: cover; aspect-ratio: 1/1; border-radius: 12px; filter: brightness(0.8) contrast(1.1);">
+              <img src="Assets/images/Manga Commission - Style A.jpg" class="back-view"
+                style="width: 100%; height: 280px; object-fit: cover; aspect-ratio: 1/1; border-radius: 12px; filter: brightness(0.8) contrast(1.1);">
+            </div>
+            <div class="product-info">
+              <div class="product-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                  class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>
+              <h4>Manga Art</h4>
+              <div class="product-price-row"><span>Rs 8,000</span></div>
+              <button class="buy-btn">ADD TO CART</button>
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div class="product-card">
+            <div class="product-img">
+              <img src="Assets/images/Abstract Tech Art.jpg"
+                style="width: 100%; height: 280px; object-fit: cover; aspect-ratio: 1/1; border-radius: 12px; filter: brightness(0.8) contrast(1.1);">
+              <img src="Assets/images/Abstract Tech Art.jpg" class="back-view"
+                style="width: 100%; height: 280px; object-fit: cover; aspect-ratio: 1/1; border-radius: 12px; filter: brightness(0.8) contrast(1.1);">
+            </div>
+            <div class="product-info">
+              <div class="product-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                  class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+              <h4>Synth Art</h4>
+              <div class="product-price-row"><span>Rs 3,000</span></div>
+              <button class="buy-btn">ADD TO CART</button>
+            </div>
+          </div>
+          <!-- Card 4 -->
+          <div class="product-card">
+            <div class="product-img">
+              <img src="Assets/images/Cyber-Neon Hoodie V2.jpg"
+                style="width: 100%; height: 280px; object-fit: cover; aspect-ratio: 1/1; border-radius: 12px; filter: brightness(0.8) contrast(1.1);">
+              <img src="Assets/images/Cyber-Neon Hoodie V2.jpg" class="back-view"
+                style="width: 100%; height: 280px; object-fit: cover; aspect-ratio: 1/1; border-radius: 12px; filter: brightness(0.8) contrast(1.1);">
+            </div>
+            <div class="product-info">
+              <div class="product-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                  class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+              <h4>Neon Hoodie V2</h4>
+              <div class="product-price-row"><span>Rs 5,500</span></div>
+              <button class="buy-btn">ADD TO CART</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. FEATURED MASTERPIECES (POLISHED GRID) -->
+    <section class="store-main" style="padding: 100px 0; background: var(--bg-main);">
+      <div class="nav-container" style="display: block; text-align: center;">
+        <div class="store-title-wrap" style="text-align: center; margin-bottom: 60px;">
+          <h1 style="font-size: 3.5rem; font-weight: 900; letter-spacing: 2px; color: #fff; text-transform: uppercase;">
+            FEATURED MASTERPIECES</h1>
+          <div style="width: 100px; height: 4px; background: var(--accent); margin: 20px auto 0; border-radius: 2px;">
+          </div>
+        </div>
+        <div class="raptr-store-grid"
+          style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; justify-content: center; justify-items: center;">
+          <!-- Card 1 -->
+          <div class="product-card">
+            <div class="product-img">
+              <img src="Assets/images/Canvas Print - Synthetic Soul.jpg"
+                style="width: 100%; height: 280px; object-fit: cover; aspect-ratio: 1/1; border-radius: 12px; filter: brightness(0.8) contrast(1.1);">
+            </div>
+            <div class="product-info">
+              <div class="product-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                  class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+              <h4>Synthetic Soul</h4>
+              <div class="product-price-row"><span>Rs 9,500</span></div>
+              <button class="buy-btn">ADD TO CART</button>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div class="product-card">
+            <div class="product-img">
+              <img src="Assets/images/Custom OC Reference Sheet.jpg"
+                style="width: 100%; height: 280px; object-fit: cover; aspect-ratio: 1/1; border-radius: 12px; filter: brightness(0.8) contrast(1.1);">
+            </div>
+            <div class="product-info">
+              <div class="product-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                  class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+              <h4>OC Reference Sheet</h4>
+              <div class="product-price-row"><span>Rs 12,000</span></div>
+              <button class="buy-btn">ADD TO CART</button>
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div class="product-card">
+            <div class="product-img">
+              <img src="Assets/images/Digital Sketch Piece.jpg"
+                style="width: 100%; height: 280px; object-fit: cover; aspect-ratio: 1/1; border-radius: 12px; filter: brightness(0.8) contrast(1.1);">
+            </div>
+            <div class="product-info">
+              <div class="product-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                  class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+              <h4>Digital Sketch</h4>
+              <div class="product-price-row"><span>Rs 5,000</span></div>
+              <button class="buy-btn">ADD TO CART</button>
+            </div>
+          </div>
+          <!-- Card 4 -->
+          <div class="product-card">
+            <div class="product-img">
+              <img src="Assets/images/Limited Edition Art Book.jpg"
+                style="width: 100%; height: 280px; object-fit: cover; aspect-ratio: 1/1; border-radius: 12px; filter: brightness(0.8) contrast(1.1);">
+            </div>
+            <div class="product-info">
+              <div class="product-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                  class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+              <h4>Book Cover</h4>
+              <div class="product-price-row"><span>Rs 7,500</span></div>
+              <button class="buy-btn">ADD TO CART</button>
+            </div>
+          </div>
+          <!-- Card 5 -->
+          <div class="product-card">
+            <div class="product-img">
+              <img src="Assets/images/Manga Cover Illustration.jpg"
+                style="width: 100%; height: 280px; object-fit: cover; aspect-ratio: 1/1; border-radius: 12px; filter: brightness(0.8) contrast(1.1);">
+            </div>
+            <div class="product-info">
+              <div class="product-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                  class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+              <h4>Manga Cover</h4>
+              <div class="product-price-row"><span>Rs 8,500</span></div>
+              <button class="buy-btn">ADD TO CART</button>
+            </div>
+          </div>
+          <!-- Card 6 -->
+          <div class="product-card">
+            <div class="product-img">
+              <img src="Assets/images/Manga Hero Portrait.4.jpg"
+                style="width: 100%; height: 280px; object-fit: cover; aspect-ratio: 1/1; border-radius: 12px; filter: brightness(0.8) contrast(1.1);">
+            </div>
+            <div class="product-info">
+              <div class="product-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                  class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+              <h4>Manga Portrait</h4>
+              <div class="product-price-row"><span>Rs 6,000</span></div>
+              <button class="buy-btn">ADD TO CART</button>
+            </div>
+          </div>
+          <!-- Card 7 -->
+          <div class="product-card">
+            <div class="product-img">
+              <img src="Assets/images/Vibe-Check Portrait.jpg"
+                style="width: 100%; height: 280px; object-fit: cover; aspect-ratio: 1/1; border-radius: 12px; filter: brightness(0.8) contrast(1.1);">
+            </div>
+            <div class="product-info">
+              <div class="product-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                  class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+              <h4>Portrait</h4>
+              <div class="product-price-row"><span>Rs 15,000</span></div>
+              <button class="buy-btn">ADD TO CART</button>
+            </div>
+          </div>
+          <!-- Card 8 -->
+          <div class="product-card">
+            <div class="product-img">
+              <img src="Assets/images/Profile Picture Design.jpg"
+                style="width: 100%; height: 280px; object-fit: cover; aspect-ratio: 1/1; border-radius: 12px; filter: brightness(0.8) contrast(1.1);">
+            </div>
+            <div class="product-info">
+              <div class="product-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                  class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+              <h4>Profile Picture</h4>
+              <div class="product-price-row"><span>Rs 4,500</span></div>
+              <button class="buy-btn">ADD TO CART</button>
+            </div>
+          </div>
+          <!-- Card 9 -->
+          <div class="product-card">
+            <div class="product-img">
+              <img src="Assets/images/Cyber-City Environment Art.jpg"
+                style="width: 100%; height: 280px; object-fit: cover; aspect-ratio: 1/1; border-radius: 12px; filter: brightness(0.8) contrast(1.1);">
+            </div>
+            <div class="product-info">
+              <div class="product-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                  class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+              <h4>Cyber-City Art</h4>
+              <div class="product-price-row"><span>Rs 15,000</span></div>
+              <button class="buy-btn">ADD TO CART</button>
+            </div>
+          </div>
+          <!-- Card 10 -->
+          <div class="product-card">
+            <div class="product-img">
+              <img src="Assets/images/Premium Cyber Hoodie.jpg"
+                style="width: 100%; height: 280px; object-fit: cover; aspect-ratio: 1/1; border-radius: 12px; filter: brightness(0.8) contrast(1.1);">
+            </div>
+            <div class="product-info">
+              <div class="product-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                  class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+              <h4>Premium Cyber Hoodie</h4>
+              <div class="product-price-row"><span>Rs 8,500</span></div>
+              <button class="buy-btn">ADD TO CART</button>
+            </div>
+          </div>
+          <!-- Card 11 -->
+          <div class="product-card">
+            <div class="product-img">
+              <img src="Assets/images/Cyber-Neon Hoodie V2.jpg"
+                style="width: 100%; height: 280px; object-fit: cover; aspect-ratio: 1/1; border-radius: 12px; filter: brightness(0.8) contrast(1.1);">
+              <img src="Assets/images/Cyber-Neon Hoodie V2.jpg" class="back-view"
+                style="width: 100%; height: 280px; object-fit: cover; aspect-ratio: 1/1; border-radius: 12px; filter: brightness(0.8) contrast(1.1);">
+            </div>
+            <div class="product-info">
+              <div class="product-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                  class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+              <h4>Neon Hoodie V2</h4>
+              <div class="product-price-row"><span>Rs 5,500</span></div>
+              <button class="buy-btn">ADD TO CART</button>
+            </div>
+          </div>
+          <!-- Card 12 -->
+          <div class="product-card">
+            <div class="product-img">
+              <img src="Assets/images/product1.png"
+                style="width: 100%; height: 280px; object-fit: cover; aspect-ratio: 1/1; border-radius: 12px; filter: brightness(0.8) contrast(1.1);">
+              <img src="Assets/images/Tactical Vest.jpg" class="back-view"
+                style="width: 100%; height: 280px; object-fit: cover; aspect-ratio: 1/1; border-radius: 12px; filter: brightness(0.8) contrast(1.1);">
+            </div>
+            <div class="product-info">
+              <div class="product-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                  class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+              <h4>CyberPunk Portrait</h4>
+              <div class="product-price-row"><span>Rs 7,000</span></div>
+              <button class="buy-btn">ADD TO CART</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LIVE COMMISSION STREAM -->
+    <section class="live-stream-section" style="padding: 40px 0 20px;">
+      <div class="nav-container">
+        <div class="stream-container"
+          style="max-width: 800px; margin: 0 auto; text-align: center; background: rgba(255,255,255,0.03); padding: 30px; border-radius: 12px; border: 1px solid rgba(0,174,255,0.1); backdrop-filter: blur(10px);">
+          <h3 style="color: #00aeff; margin-bottom: 20px; font-weight: 900; letter-spacing: 1px;"><i
+              class="fas fa-broadcast-tower pulse-icon" style="font-size: 1.2rem; margin-right: 10px;"></i> LIVE
+            COMMISSION STREAM</h3>
+          <div class="stream-list" style="display: flex; flex-direction: column; gap: 15px; align-items: center;">
+            <div class="stream-item" style="color: #b0b7c3; font-weight: 600;">
+              <i class="fas fa-circle pulse-dot"
+                style="color: #00aeff; margin-right: 10px; font-size: 0.6rem; vertical-align: middle;"></i> <span
+                style="color: #00aeff;">Agent_01</span> ordered Mecha Portrait <span
+                style="color: #64748b; font-size: 0.85rem; margin-left: 10px;">- 2 hours ago</span>
+            </div>
+            <div class="stream-item" style="color: #b0b7c3; font-weight: 600;">
+              <i class="fas fa-circle pulse-dot"
+                style="color: #00aeff; margin-right: 10px; font-size: 0.6rem; vertical-align: middle;"></i> <span
+                style="color: #00aeff;">SyndicateGear</span> confirmed custom hoodie delivery <span
+                style="color: #64748b; font-size: 0.85rem; margin-left: 10px;">- 5 hours ago</span>
+            </div>
+            <div class="stream-item" style="color: #b0b7c3; font-weight: 600;">
+              <i class="fas fa-circle pulse-dot"
+                style="color: #00aeff; margin-right: 10px; font-size: 0.6rem; vertical-align: middle;"></i> <span
+                style="color: #00aeff;">Phantom_V</span> commissioned Cyberpunk Landscape <span
+                style="color: #64748b; font-size: 0.85rem; margin-left: 10px;">- 12 hours ago</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- UPCOMING DROPS TIMELINE -->
+    <section class="upcoming-drops-section" style="padding: 100px 0; background: var(--bg-main);">
+      <div class="nav-container" style="display: block; text-align: center;">
+
+        <!-- 1. Heading at Very Top -->
+        <div class="store-title-wrap" style="margin-bottom: 60px;">
+          <p
+            style="color: var(--raptr-blue); font-weight: 800; margin-bottom: 15px; letter-spacing: 3px; text-transform: uppercase;">
+            FUTURE HYPE</p>
+          <h1 style="font-size: 3rem; font-weight: 900; letter-spacing: 2px; color: #fff;">UPCOMING DROPS</h1>
+        </div>
+
+        <!-- 2. Timeline Cards in Middle -->
+        <div class="timeline-grid"
+          style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-bottom: 60px;">
+          <div class="timeline-card locked pulse-blue-card">
+            <div class="badge">COMING MAY 15</div>
+            <img src="Assets/images/hero_bg_1777238662886.png" alt="Drop 1">
+            <div class="locked-overlay">
+              <i class="fas fa-lock"></i>
+              <h4>Classified Art Drop</h4>
+            </div>
+          </div>
+          <div class="timeline-card locked pulse-blue-card">
+            <div class="badge">COMING MAY 22</div>
+            <img src="Assets/images/hero_image_1777236663611.png" alt="Drop 2">
+            <div class="locked-overlay">
+              <i class="fas fa-lock"></i>
+              <h4>Mecha Hoodie V2</h4>
+            </div>
+          </div>
+          <div class="timeline-card locked pulse-blue-card">
+            <div class="badge">COMING JUNE 01</div>
+            <img src="Assets/images/Abstract Tech Art.jpg" alt="Drop 3">
+            <div class="locked-overlay">
+              <i class="fas fa-lock"></i>
+              <h4>Syndicate Canvas</h4>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Compact Content Box at Bottom (closer to cards) -->
+        <div class="drops-info-wrap"
+          style="max-width: 800px; margin: 0 auto; background: rgba(0, 174, 255, 0.05); padding: 40px; border-radius: 15px; border: 1px solid rgba(0, 174, 255, 0.1); backdrop-filter: blur(10px);">
+          <h3
+            style="color: #fff; font-weight: 900; letter-spacing: 2px; margin-bottom: 15px; font-family: 'Orbitron', sans-serif;">
+            SYNDICATE INTEL</h3>
+          <p style="color: #64748b; line-height: 1.8; font-size: 1rem; margin-bottom: 25px;">
+            The next evolution of SoulThread is strictly limited. Secure your position in the Syndicate to receive early
+            access codes before the public launch.
+          </p>
+
+          <div
+            style="display: flex; justify-content: center; gap: 40px; border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 25px;">
+            <div class="intel-stat">
+              <span style="display: block; color: #00aeff; font-weight: 900; font-size: 1.5rem;">50</span>
+              <span
+                style="color: #64748b; font-size: 0.75rem; text-transform: uppercase; font-weight: 700;">Units</span>
+            </div>
+            <div class="intel-stat">
+              <span style="display: block; color: #00aeff; font-weight: 900; font-size: 1.5rem;">GLOBAL</span>
+              <span style="color: #64748b; font-size: 0.75rem; text-transform: uppercase; font-weight: 700;">Ship</span>
+            </div>
+            <div class="intel-stat">
+              <span style="display: block; color: #00aeff; font-weight: 900; font-size: 1.5rem;">24H</span>
+              <span
+                style="color: #64748b; font-size: 0.75rem; text-transform: uppercase; font-weight: 700;">Early</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- THE SYNDICATE ADVANTAGE (WHY US) -->
+    <section class="advantage-section" style="padding: 100px 0; background: var(--bg-main);">
+      <div class="nav-container" style="display: block; text-align: center;">
+        <div class="store-title-wrap" style="text-align: center; margin-bottom: 60px;">
+          <p
+            style="color: var(--raptr-blue); font-weight: 800; margin-bottom: 15px; letter-spacing: 3px; text-transform: uppercase;">
+            EXCELLENCE</p>
+          <h1 style="font-size: 3.5rem; font-weight: 900; letter-spacing: 2px; color: #fff;">WHY CHOOSE SOULTHREAD</h1>
+          <div style="width: 100px; height: 4px; background: var(--accent); margin: 20px auto 0; border-radius: 2px;">
+          </div>
+        </div>
+        <div class="advantage-grid"
+          style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; justify-content: center;">
+          <div class="advantage-card"
+            style="text-align: center; background: rgba(255,255,255,0.02); padding: 40px; border-radius: 20px; border: 1px solid rgba(0, 174, 255, 0.1); backdrop-filter: blur(10px);">
+            <i class="fas fa-palette" style="font-size: 2.5rem; color: var(--accent); margin-bottom: 20px;"></i>
+            <h3 style="color: #fff; font-weight: 900; margin-bottom: 15px; letter-spacing: 1px;">ELITE ARTISTS</h3>
+            <p style="color: #64748b; line-height: 1.6;">Our syndicate consists only of top-tier illustrators and
+              mecha-designers from around the globe.</p>
+          </div>
+          <div class="advantage-card"
+            style="text-align: center; background: rgba(255,255,255,0.02); padding: 40px; border-radius: 20px; border: 1px solid rgba(0, 174, 255, 0.1); backdrop-filter: blur(10px);">
+            <i class="fas fa-shirt" style="font-size: 2.5rem; color: var(--accent); margin-bottom: 20px;"></i>
+            <h3 style="color: #fff; font-weight: 900; margin-bottom: 15px; letter-spacing: 1px;">PREMIUM GOODS</h3>
+            <p style="color: #64748b; line-height: 1.6;">We use high-GSM fabrics for hoodies and museum-grade archival
+              inks for every single print.</p>
+          </div>
+          <div class="advantage-card"
+            style="text-align: center; background: rgba(255,255,255,0.02); padding: 40px; border-radius: 20px; border: 1px solid rgba(0, 174, 255, 0.1); backdrop-filter: blur(10px);">
+            <i class="fas fa-truck-fast" style="font-size: 2.5rem; color: var(--accent); margin-bottom: 20px;"></i>
+            <h3 style="color: #fff; font-weight: 900; margin-bottom: 15px; letter-spacing: 1px;">GLOBAL STEALTH</h3>
+            <p style="color: #64748b; line-height: 1.6;">Fast, secure, and tracked delivery to any corner of the world.
+              Your gear, delivered safely.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- 3D SYNDICATE REVIEWS (FLOATING MARQUEE) -->
+    <section class="reviews-section" style="padding: 120px 0; background: var(--bg-main); overflow: hidden;">
+      <div class="nav-container" style="display: block; text-align: center;">
+        <div class="store-title-wrap" style="text-align: center; margin-bottom: 80px;">
+          <p style="color: var(--accent); font-weight: 800; margin-bottom: 15px; letter-spacing: 3px; text-transform: uppercase;">TESTIMONIALS</p>
+          <h1 style="font-size: 3.5rem; font-weight: 900; letter-spacing: 2px; color: #fff;">SYNDICATE COMMS</h1>
+          <div style="width: 100px; height: 4px; background: var(--accent); margin: 20px auto 0; border-radius: 2px;"></div>
+        </div>
+
+        <!-- Marquee Container -->
+        <div class="reviews-marquee-container" style="position: relative; width: 100%; height: 450px; overflow: hidden; perspective: 1500px;">
+          <div class="reviews-marquee-track">
+            
+            <!-- Review 1 -->
+            <div class="review-3d-card">
+              <div class="review-3d-inner">
+                <div style="display: flex; align-items: center; margin-bottom: 25px;">
+                  <img src="Assets/images/hero_image_1777236663611.png" style="width: 60px; height: 60px; border-radius: 50%; border: 2px solid var(--accent); object-fit: cover; margin-right: 15px;">
+                  <div>
+                    <h4 style="color: #fff; font-weight: 900; margin-bottom: 2px;">Alex_V</h4>
+                    <p style="color: var(--accent); font-size: 0.8rem; font-weight: 700;">Verified Agent</p>
+                  </div>
+                </div>
+                <p style="color: #94a3b8; line-height: 1.7; font-style: italic;">"The level of detail in the custom mecha portrait I ordered is insane. SoulThread is the only place for elite cyberpunk art."</p>
+                <div style="margin-top: 20px; color: #ffcc00; font-size: 0.9rem;"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+              </div>
+            </div>
+
+            <!-- Review 2 -->
+            <div class="review-3d-card">
+              <div class="review-3d-inner">
+                <div style="display: flex; align-items: center; margin-bottom: 25px;">
+                  <img src="Assets/images/Dungeon Master Portrait.jpg" style="width: 60px; height: 60px; border-radius: 50%; border: 2px solid var(--accent); object-fit: cover; margin-right: 15px;">
+                  <div>
+                    <h4 style="color: #fff; font-weight: 900; margin-bottom: 2px;">Sarah.Dev</h4>
+                    <p style="color: var(--accent); font-size: 0.8rem; font-weight: 700;">Syndicate Member</p>
+                  </div>
+                </div>
+                <p style="color: #94a3b8; line-height: 1.7; font-style: italic;">"Fast shipping and the quality of the Ronin Hoodie exceeded my expectations. 500 GSM fabric feels like premium armor."</p>
+                <div style="margin-top: 20px; color: #ffcc00; font-size: 0.9rem;"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+              </div>
+            </div>
+
+            <!-- Review 3 -->
+            <div class="review-3d-card">
+              <div class="review-3d-inner">
+                <div style="display: flex; align-items: center; margin-bottom: 25px;">
+                  <img src="Assets/images/Vibe-Check Portrait.jpg" style="width: 60px; height: 60px; border-radius: 50%; border: 2px solid var(--accent); object-fit: cover; margin-right: 15px;">
+                  <div>
+                    <h4 style="color: #fff; font-weight: 900; margin-bottom: 2px;">Phantom_X</h4>
+                    <p style="color: var(--accent); font-size: 0.8rem; font-weight: 700;">Top Collector</p>
+                  </div>
+                </div>
+                <p style="color: #94a3b8; line-height: 1.7; font-style: italic;">"Establishment of the neural link was seamless. The art files were delivered instantly and the resolution is perfect."</p>
+                <div style="margin-top: 20px; color: #ffcc00; font-size: 0.9rem;"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+              </div>
+            </div>
+
+            <!-- Review 4 -->
+            <div class="review-3d-card">
+              <div class="review-3d-inner">
+                <div style="display: flex; align-items: center; margin-bottom: 25px;">
+                  <img src="Assets/images/Manga Hero Portrait.6.jpg" style="width: 60px; height: 60px; border-radius: 50%; border: 2px solid var(--accent); object-fit: cover; margin-right: 15px;">
+                  <div>
+                    <h4 style="color: #fff; font-weight: 900; margin-bottom: 2px;">Neo.Art</h4>
+                    <p style="color: var(--accent); font-size: 0.8rem; font-weight: 700;">Verified Buyer</p>
+                  </div>
+                </div>
+                <p style="color: #94a3b8; line-height: 1.7; font-style: italic;">"The best techwear I've owned. It looks exactly like the photos and fits perfectly. Truly elite gear for the modern era."</p>
+                <div style="margin-top: 20px; color: #ffcc00; font-size: 0.9rem;"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+              </div>
+            </div>
+
+            <!-- Repeat for seamless loop -->
+             <div class="review-3d-card">
+              <div class="review-3d-inner">
+                <div style="display: flex; align-items: center; margin-bottom: 25px;">
+                  <img src="Assets/images/hero_image_1777236663611.png" style="width: 60px; height: 60px; border-radius: 50%; border: 2px solid var(--accent); object-fit: cover; margin-right: 15px;">
+                  <div>
+                    <h4 style="color: #fff; font-weight: 900; margin-bottom: 2px;">Alex_V</h4>
+                    <p style="color: var(--accent); font-size: 0.8rem; font-weight: 700;">Verified Agent</p>
+                  </div>
+                </div>
+                <p style="color: #94a3b8; line-height: 1.7; font-style: italic;">"The level of detail in the custom mecha portrait I ordered is insane. SoulThread is the only place for elite cyberpunk art."</p>
+                <div style="margin-top: 20px; color: #ffcc00; font-size: 0.9rem;"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+              </div>
+            </div>
+
+            <div class="review-3d-card">
+              <div class="review-3d-inner">
+                <div style="display: flex; align-items: center; margin-bottom: 25px;">
+                  <img src="Assets/images/Dungeon Master Portrait.jpg" style="width: 60px; height: 60px; border-radius: 50%; border: 2px solid var(--accent); object-fit: cover; margin-right: 15px;">
+                  <div>
+                    <h4 style="color: #fff; font-weight: 900; margin-bottom: 2px;">Sarah.Dev</h4>
+                    <p style="color: var(--accent); font-size: 0.8rem; font-weight: 700;">Syndicate Member</p>
+                  </div>
+                </div>
+                <p style="color: #94a3b8; line-height: 1.7; font-style: italic;">"Fast shipping and the quality of the Ronin Hoodie exceeded my expectations. 500 GSM fabric feels like premium armor."</p>
+                <div style="margin-top: 20px; color: #ffcc00; font-size: 0.9rem;"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <style>
+      @keyframes marqueeScroll {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+      }
+
+      @keyframes floatCard {
+        0%, 100% { transform: translateY(0) rotateX(0deg); }
+        50% { transform: translateY(-15px) rotateX(5deg); }
+      }
+
+      .reviews-marquee-track {
+        display: flex;
+        gap: 40px;
+        width: max-content;
+        animation: marqueeScroll 30s linear infinite;
+        padding: 40px 0;
+      }
+
+      .reviews-marquee-container:hover .reviews-marquee-track {
+        animation-play-state: paused;
+      }
+
+      .review-3d-card {
+        width: 400px;
+        perspective: 1000px;
+        animation: floatCard 6s ease-in-out infinite;
+      }
+
+      .review-3d-inner {
+        background: rgba(255,255,255,0.02);
+        padding: 40px;
+        border-radius: 24px;
+        border: 1px solid rgba(0, 174, 255, 0.1);
+        backdrop-filter: blur(15px);
+        text-align: left;
+        transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        transform-style: preserve-3d;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      }
+
+      .review-3d-card:hover .review-3d-inner {
+        transform: rotateY(10deg) rotateX(5deg) scale(1.05);
+        border-color: var(--accent);
+        background: rgba(0, 174, 255, 0.05);
+        box-shadow: -20px 20px 50px rgba(0, 174, 255, 0.2);
+      }
+
+      .review-3d-card:nth-child(even) {
+        animation-delay: -3s;
+      }
+    </style>
+  </main>
+
+  <!-- THEME TOGGLE (PRE-FOOTER) -->
+  <section class="theme-toggle-section">
+    <div class="nav-container theme-toggle-container">
+      <div class="theme-labels">
+        <span class="theme-label active" id="label-dark"><i class="fas fa-moon"></i> DARK MODE</span>
+      </div>
+      <label class="switch">
+        <input type="checkbox" id="themeToggleCheckbox">
+        <span class="slider round"></span>
+      </label>
+      <div class="theme-labels">
+        <span class="theme-label" id="label-light"><i class="fas fa-sun"></i> LIGHT MODE</span>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <!-- Column 1 -->
+      <div class="footer-col">
+        <a href="index.html" class="logo" style="display: block; margin-bottom: 20px;">
+          <img src="Assets/images/logo-v3.png" alt="SoulThread Logo"
+            style="height: 80px; filter: drop-shadow(0 0 15px rgba(0, 174, 255, 0.3));">
+        </a>
+        <p>Your ultimate destination for premium art gear, elite commissions, and the latest creative content. Level up
+          your aesthetic experience with us.</p>
+      </div>
+
+      <!-- Column 2 -->
+      <div class="footer-col">
+        <h4>Connect With Us</h4>
+        <div class="social-icons-row">
+          <a href="#" class="social-icon-box fb"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-icon-box dc"><i class="fab fa-discord"></i></a>
+          <a href="#" class="social-icon-box ig"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-icon-box li"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="social-icon-box tw"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+
+      <!-- Column 3 -->
+      <div class="footer-col">
+        <div class="help-title">Need Help?</div>
+        <p>Whether you have a question or just want to say hi, our team is always ready to chat.</p>
+        <a href="javascript:void(0)" class="get-in-touch-btn">Get in Touch <i class="fas fa-arrow-right"
+            style="margin-left: 10px;"></i></a>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="footer-bottom">
+      <div class="footer-bottom-container">
+        <p>© 2026 SoulThread Syndicate. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="faq.html">FAQ</a>
+          <a href="blog.html">Blog</a>
+          <a href="safety.html">Trust & Safety</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Contact Modal -->
+  <div class="contact-modal" id="contactModal">
+    <div class="contact-modal-content">
+      <div class="close-contact-modal"><i class="fas fa-times"></i></div>
+      <h2>TRANSMIT MESSAGE</h2>
+      <p>Establish a secure line with the Syndicate.</p>
+      <form class="syndicate-contact-form">
+        <div class="form-row">
+          <input type="text" placeholder="Agent Name" required>
+          <input type="email" placeholder="Encrypted Email" required>
+        </div>
+        <input type="text" placeholder="Subject" required>
+        <textarea placeholder="Message Log" rows="4" required></textarea>
+        <button type="submit" class="transmit-btn">SEND TRANSMISSION</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- CART DRAWER & OVERLAY -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-drawer-header">
+      <h2>SYNDICATE CART</h2>
+      <div class="close-cart" id="closeCart"><i class="fas fa-times"></i></div>
+    </div>
+    <div class="cart-items-list" id="cartItemsList">
+      <div class="empty-cart-msg">Your syndicate gear bag is empty.</div>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>TOTAL</span>
+        <span id="cartTotalDisplay">Rs 0</span>
+      </div>
+      <button class="checkout-btn">PROCEED TO CHECKOUT</button>
+    </div>
+  </div>
+
+  <!-- Swiper JS Engine -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="JS files/main.js"></script>
+  <script src="JS files/hero-slider.js"></script>
+</body>
+
+</html>

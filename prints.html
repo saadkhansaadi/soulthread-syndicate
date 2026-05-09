@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prints | SoulThread Syndicate</title>
+  <link rel="stylesheet" href="CSS/style.css">
+  <link rel="stylesheet" href="CSS/responsive.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="icon" type="image/png" href="Assets/images/logo-v3.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body class="store-page">
+
+  <!-- MAIN HEADER -->
+  <header class="header">
+    <div class="nav-container">
+      <a href="index.html" class="logo" style="display: flex; align-items: center;">
+        <img src="Assets/images/logo-v3.png" alt="SoulThread Logo" style="height: 50px; filter: drop-shadow(0 0 10px rgba(0, 174, 255, 0.4));">
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="store.html" class="active">Store</a>
+        <a href="commissions.html">Commissions</a>
+        <a href="apparel.html">Apparel</a>
+        <a href="blog.html">Blog</a>
+      </nav>
+      <div class="nav-actions">
+        <div class="cart-icon-wrap">
+          <i class="fas fa-shopping-bag"></i>
+          <span class="cart-badge">0</span>
+        </div>
+        <a href="login.html" class="login-btn">LOGIN</a>
+        <a href="signup.html" class="signup-btn">SIGN UP</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- CART DRAWER & OVERLAY -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-drawer-header">
+      <h2>SYNDICATE CART</h2>
+      <div class="close-cart" id="closeCart"><i class="fas fa-times"></i></div>
+    </div>
+    <div class="cart-items-list" id="cartItemsList">
+      <div class="empty-cart-msg">Your syndicate gear bag is empty.</div>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>TOTAL</span>
+        <span id="cartTotalDisplay">Rs 0</span>
+      </div>
+      <button class="checkout-btn">PROCEED TO CHECKOUT</button>
+    </div>
+  </div>
+
+  <main class="store-main">
+    <div class="store-title-wrap" style="text-align: center; margin: 80px 0 40px;">
+      <h1 style="font-family: 'Orbitron', sans-serif; font-size: 3.5rem; color: #fff; text-transform: uppercase; letter-spacing: 5px;">MUSEUM PRINTS</h1>
+      <p style="color: var(--accent); font-weight: 800; letter-spacing: 3px; text-transform: uppercase;">Archival Grade Visual Assets</p>
+    </div>
+
+    <div class="store-content-layout" style="max-width: 1400px; margin: 0 auto; padding: 40px 20px; display: flex; gap: 40px;">
+      
+      <!-- Sidebar -->
+      <aside class="category-sidebar" style="flex: 0 0 300px; background: rgba(255,255,255,0.02); border: 1px solid rgba(0, 174, 255, 0.1); border-radius: 24px; padding: 30px; height: fit-content;">
+        <h3 style="font-family: 'Orbitron', sans-serif; font-size: 1.1rem; color: #fff; margin-bottom: 25px; border-bottom: 1px solid var(--accent); padding-bottom: 15px;">CATEGORIES</h3>
+        <ul style="list-style: none; padding: 0;">
+          <li style="margin-bottom: 15px;"><a href="poster-prints.html" style="color: #64748b; text-decoration: none; font-weight: 700; transition: 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='#64748b'">Poster Prints (8)</a></li>
+          <li style="margin-bottom: 15px;"><a href="limited-editions.html" style="color: #64748b; text-decoration: none; font-weight: 700; transition: 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='#64748b'">Limited Editions (4)</a></li>
+        </ul>
+      </aside>
+
+      <!-- Main Grid -->
+      <div class="raptr-store-grid" style="flex: 1; display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px;">
+        
+        <!-- Print 1 -->
+        <div class="product-card" data-category="prints" data-price="2500" data-stock="true">
+          <div class="wishlist-icon"><i class="far fa-heart"></i></div>
+          <div class="product-img">
+            <img src="Assets/images/Poster - Cyber City.1.jpg" alt="Cyber City Poster" style="width: 100%; height: 320px; object-fit: cover; border-radius: 12px;">
+          </div>
+          <div class="product-info">
+            <h4>Poster - Cyber City</h4>
+            <div class="product-price-row"><span>Rs 2,500</span></div>
+            <button class="buy-btn">ADD TO CART</button>
+          </div>
+        </div>
+
+        <!-- Print 2 -->
+        <div class="product-card" data-category="prints" data-price="3500" data-stock="true">
+          <div class="wishlist-icon"><i class="far fa-heart"></i></div>
+          <div class="product-img">
+            <img src="Assets/images/Wall Art - Synthwave.1.jpg" alt="Synthwave Wall Art" style="width: 100%; height: 320px; object-fit: cover; border-radius: 12px;">
+          </div>
+          <div class="product-info">
+            <h4>Wall Art - Synthwave V1</h4>
+            <div class="product-price-row"><span>Rs 3,500</span></div>
+            <button class="buy-btn">ADD TO CART</button>
+          </div>
+        </div>
+
+        <!-- Print 3 -->
+        <div class="product-card" data-category="prints" data-price="10000" data-stock="true">
+          <div class="wishlist-icon"><i class="far fa-heart"></i></div>
+          <div class="product-img">
+            <img src="Assets/images/Limited Prints Set.1.jpg" alt="Limited Prints" style="width: 100%; height: 320px; object-fit: cover; border-radius: 12px;">
+          </div>
+          <div class="product-info">
+            <h4>Elite Limited Prints Set</h4>
+            <div class="product-price-row"><span>Rs 10,000</span></div>
+            <button class="buy-btn">ADD TO CART</button>
+          </div>
+        </div>
+
+        <!-- Print 4 -->
+        <div class="product-card" data-category="prints" data-price="4000" data-stock="true">
+          <div class="wishlist-icon"><i class="far fa-heart"></i></div>
+          <div class="product-img">
+            <img src="Assets/images/Poster - Cyber City.2.jpg" alt="Cyber City Poster 2" style="width: 100%; height: 320px; object-fit: cover; border-radius: 12px;">
+          </div>
+          <div class="product-info">
+            <h4>Neon City Poster</h4>
+            <div class="product-price-row"><span>Rs 4,000</span></div>
+            <button class="buy-btn">ADD TO CART</button>
+          </div>
+        </div>
+
+        <!-- Print 5 -->
+        <div class="product-card" data-category="prints" data-price="4500" data-stock="true">
+          <div class="wishlist-icon"><i class="far fa-heart"></i></div>
+          <div class="product-img">
+            <img src="Assets/images/Poster - Cyber City.jpg" alt="Cyber City Poster Alt" style="width: 100%; height: 320px; object-fit: cover; border-radius: 12px;">
+          </div>
+          <div class="product-info">
+            <h4>Dystopia City Print</h4>
+            <div class="product-price-row"><span>Rs 4,500</span></div>
+            <button class="buy-btn">ADD TO CART</button>
+          </div>
+        </div>
+
+        <!-- Print 6 -->
+        <div class="product-card" data-category="prints" data-price="3800" data-stock="true">
+          <div class="wishlist-icon"><i class="far fa-heart"></i></div>
+          <div class="product-img">
+            <img src="Assets/images/Poster - Retro Future.1.jpg" alt="Retro Future" style="width: 100%; height: 320px; object-fit: cover; border-radius: 12px;">
+          </div>
+          <div class="product-info">
+            <h4>Retro Future Poster</h4>
+            <div class="product-price-row"><span>Rs 3,800</span></div>
+            <button class="buy-btn">ADD TO CART</button>
+          </div>
+        </div>
+
+        <!-- Print 7 -->
+        <div class="product-card" data-category="prints" data-price="3800" data-stock="true">
+          <div class="wishlist-icon"><i class="far fa-heart"></i></div>
+          <div class="product-img">
+            <img src="Assets/images/Wall Art - Synthwave.2.jpg" alt="Synthwave Alt" style="width: 100%; height: 320px; object-fit: cover; border-radius: 12px;">
+          </div>
+          <div class="product-info">
+            <h4>Wall Art - Synthwave V2</h4>
+            <div class="product-price-row"><span>Rs 3,800</span></div>
+            <button class="buy-btn">ADD TO CART</button>
+          </div>
+        </div>
+
+        <!-- Print 8 -->
+        <div class="product-card" data-category="prints" data-price="3800" data-stock="true">
+          <div class="wishlist-icon"><i class="far fa-heart"></i></div>
+          <div class="product-img">
+            <img src="Assets/images/Wall Art - Synthwave.jpg" alt="Synthwave Core" style="width: 100%; height: 320px; object-fit: cover; border-radius: 12px;">
+          </div>
+          <div class="product-info">
+            <h4>Wall Art - Synthwave Core</h4>
+            <div class="product-price-row"><span>Rs 3,800</span></div>
+            <button class="buy-btn">ADD TO CART</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-bottom">
+      <div class="footer-bottom-container">
+        <p>© 2026 SoulThread Syndicate. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="JS files/main.js"></script>
+</body>
+</html>

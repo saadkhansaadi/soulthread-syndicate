@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | SoulThread Syndicate</title>
+  <link rel="icon" type="image/png" href="Assets/images/logo-v3.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="CSS/style.css">
+  <link rel="stylesheet" href="CSS/responsive.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+  <style>
+    /* Raptr-Style Auth Redesign */
+    body.auth-body {
+      background: #0a0a0b;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .auth-main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 60px 20px;
+    }
+
+    .auth-split-container {
+      display: flex;
+      width: 100%;
+      max-width: 1100px;
+      background: rgba(15, 15, 18, 0.6);
+      backdrop-filter: blur(20px);
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Left Column: Promo Area */
+    .auth-promo {
+      flex: 1;
+      background: linear-gradient(rgba(10, 10, 11, 0.7), rgba(10, 10, 11, 0.8)), url('cyberpunk_art_print_1_retry_1778165509124.png');
+      background-size: cover;
+      background-position: center;
+      padding: 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      border-right: 1px solid rgba(255, 255, 255, 0.05);
+      position: relative;
+    }
+
+    .promo-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .promo-content h2 {
+      font-size: 2.5rem;
+      font-weight: 900;
+      margin-bottom: 20px;
+      background: linear-gradient(90deg, #fff, var(--raptr-cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .promo-content p {
+      color: #999;
+      font-size: 1.1rem;
+      max-width: 300px;
+      margin: 0 auto 30px;
+    }
+
+    .glow-border-box {
+      padding: 20px;
+      border: 1px solid var(--raptr-cyan);
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0, 242, 255, 0.2);
+      background: rgba(0, 242, 255, 0.05);
+    }
+
+    /* Right Column: Form Area */
+    .auth-form-wrapper {
+      flex: 1.2;
+      padding: 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .auth-header-info {
+      margin-bottom: 40px;
+    }
+
+    .auth-header-info h1 {
+      font-size: 2.2rem;
+      font-weight: 900;
+      margin-bottom: 10px;
+    }
+
+    .auth-header-info p {
+      color: #666;
+      font-size: 0.95rem;
+    }
+
+    /* Minimalist Inputs */
+    .form-group {
+      margin-bottom: 25px;
+      position: relative;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: #555;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .input-wrapper {
+      position: relative;
+    }
+
+    .form-group input {
+      width: 100%;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid #333;
+      padding: 12px 0;
+      color: #fff;
+      font-size: 1rem;
+      transition: 0.3s;
+    }
+
+    .form-group input:focus {
+      outline: none;
+      border-bottom-color: var(--raptr-cyan);
+      box-shadow: 0 4px 10px -5px rgba(0, 242, 255, 0.3);
+    }
+
+    .password-toggle {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #555;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .password-toggle:hover {
+      color: var(--raptr-cyan);
+    }
+
+    /* Buttons */
+    .auth-btn-primary {
+      width: 100%;
+      padding: 18px;
+      background: var(--raptr-blue);
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      font-weight: 900;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      margin-top: 20px;
+      transition: 0.4s;
+    }
+
+    .auth-btn-primary::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      transition: 0.6s;
+    }
+
+    .auth-btn-primary:hover::before {
+      left: 100%;
+    }
+
+    .auth-btn-primary:hover {
+      background: #fff;
+      color: #000;
+      box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+    }
+
+    .auth-footer-links {
+      margin-top: 30px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    .auth-footer-links a {
+      color: var(--raptr-cyan);
+      font-weight: 700;
+      text-decoration: none;
+      margin-left: 5px;
+    }
+
+    @media (max-width: 900px) {
+      .auth-promo {
+        display: none;
+      }
+
+      .auth-split-container {
+        max-width: 500px;
+      }
+    }
+
+    /* ====== SUNRISE (LIGHT MODE) OVERRIDES FOR AUTH PAGES ====== */
+    .light-mode body.auth-body {
+      background: linear-gradient(135deg, #e2e8f0, #f8fafc) !important;
+    }
+    .light-mode .auth-split-container {
+      background: rgba(255, 255, 255, 0.95) !important;
+      border: 1px solid #e2e8f0 !important;
+      box-shadow: 0 25px 50px rgba(0,0,0,0.08) !important;
+    }
+    .light-mode .auth-promo {
+      background: linear-gradient(rgba(241,245,249,0.85), rgba(241,245,249,0.9)), url('cyberpunk_art_print_1_retry_1778165509124.png') !important;
+      border-right: 1px solid #e2e8f0 !important;
+    }
+    .light-mode .promo-content h2 {
+      background: linear-gradient(90deg, #0f172a, var(--accent)) !important;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+    }
+    .light-mode .promo-content p {
+      color: #475569 !important;
+    }
+    .light-mode .auth-form-wrapper {
+      background: #ffffff !important;
+    }
+    .light-mode .auth-header-info h1 {
+      color: #0f172a !important;
+    }
+    .light-mode .auth-header-info p {
+      color: #64748b !important;
+    }
+    .light-mode .form-group label {
+      color: #475569 !important;
+    }
+    .light-mode .form-group input {
+      color: #0f172a !important;
+      border-bottom: 1px solid #cbd5e1 !important;
+    }
+    .light-mode .form-group input::placeholder {
+      color: #94a3b8 !important;
+    }
+    .light-mode .form-group input:focus {
+      border-bottom-color: var(--accent) !important;
+    }
+    .light-mode .auth-btn-primary {
+      background: var(--accent) !important;
+      color: #fff !important;
+    }
+    .light-mode .auth-btn-primary:hover {
+      background: #0f172a !important;
+      color: #fff !important;
+    }
+    .light-mode .auth-footer-links {
+      color: #64748b !important;
+    }
+    .light-mode .glow-border-box {
+      background: rgba(0, 119, 182, 0.05) !important;
+      border-color: var(--accent) !important;
+    }
+  </style>
+</head>
+
+<body class="auth-body">
+
+  <!-- Raptr Header (Transparent) -->
+  <header class="header" style="background: transparent; border-bottom: none;">
+    <div class="nav-container">
+      <a href="index.html" class="logo" style="display: flex; align-items: center;">
+        <img src="Assets/images/logo-v3.png" alt="SoulThread Logo" style="height: 50px; filter: drop-shadow(0 0 10px rgba(0, 174, 255, 0.4));">
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <div class="dropdown">
+          <a href="store.html" class="dropdown-trigger">Store <i class="fas fa-chevron-down" style="font-size: 0.6rem; margin-left: 5px;"></i></a>
+          <div class="dropdown-content" style="background: rgba(11, 20, 35, 0.95);">
+            <a href="apparel.html"><i class="fas fa-tshirt"></i> Apparel</a>
+            <a href="manga.html"><i class="fas fa-book-open"></i> Manga</a>
+            <a href="logos.html"><i class="fas fa-pen-nib"></i> Logos</a>
+            <a href="characters.html"><i class="fas fa-user-ninja"></i> Characters</a>
+            <a href="digital-art.html"><i class="fas fa-palette"></i> Digital Art</a>
+            <a href="prints.html"><i class="fas fa-print"></i> Prints</a>
+          </div>
+        </div>
+        <a href="commissions.html">Commissions</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="signup.html" class="signup-btn">SIGN UP</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="auth-main">
+    <div class="auth-split-container">
+      <!-- Left: Promo -->
+      <div class="auth-promo">
+        <div class="promo-content">
+          <div class="glow-border-box" style="margin-bottom: 30px;">
+            <i class="fas fa-shield-alt" style="font-size: 3rem; color: var(--raptr-cyan);"></i>
+          </div>
+          <h2>JOIN THE SYNDICATE</h2>
+          <p>Unlock elite commissions, private drops, and creative priority.</p>
+          <div style="font-size: 0.8rem; color: var(--raptr-cyan); letter-spacing: 2px; font-weight: 900;">AUTHORIZED
+            AGENTS ONLY</div>
+        </div>
+      </div>
+
+      <!-- Right: Form -->
+      <div class="auth-form-wrapper">
+        <div class="auth-header-info">
+          <h1>SIGN IN</h1>
+          <p>Enter your credentials to authorize access.</p>
+        </div>
+
+        <form id="loginForm">
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" placeholder="agent_01@soulthread.com" required>
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <div class="input-wrapper">
+              <input type="password" id="passwordField" placeholder="••••••••" required>
+              <i class="fas fa-eye password-toggle" id="togglePassword"></i>
+            </div>
+          </div>
+
+          <div style="text-align: right; margin-top: -10px; margin-bottom: 20px;">
+            <a href="#" style="font-size: 0.8rem; color: #555; text-decoration: none;">Forgot Password?</a>
+          </div>
+
+          <button type="submit" class="auth-btn-primary">Authorize Access</button>
+        </form>
+
+        <div class="auth-footer-links">
+          New to the syndicate? <a href="signup.html">Create Account</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <!-- Column 1 -->
+      <div class="footer-col">
+        <a href="index.html" class="logo" style="display: block; margin-bottom: 20px;">
+          <img src="Assets/images/logo-v3.png" alt="SoulThread Logo" style="height: 80px; filter: drop-shadow(0 0 15px rgba(0, 174, 255, 0.3));">
+        </a>
+        <p>Your ultimate destination for premium art gear, elite commissions, and the latest creative content. Level up your aesthetic experience with us.</p>
+      </div>
+
+      <!-- Column 2 -->
+      <div class="footer-col">
+        <h4>Connect With Us</h4>
+        <div class="social-icons-row">
+          <a href="#" class="social-icon-box fb"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-icon-box dc"><i class="fab fa-discord"></i></a>
+          <a href="#" class="social-icon-box ig"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-icon-box li"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="social-icon-box tw"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+
+      <!-- Column 3 -->
+      <div class="footer-col">
+        <div class="help-title">Need Help?</div>
+        <p>Whether you have a question or just want to say hi, our team is always ready to chat.</p>
+        <a href="javascript:void(0)" class="get-in-touch-btn">Get in Touch <i class="fas fa-arrow-right" style="margin-left: 10px;"></i></a>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="footer-bottom">
+      <div class="footer-bottom-container">
+        <p>© 2026 SoulThread Syndicate. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="faq.html">FAQ</a>
+          <a href="blog.html">Blog</a>
+          <a href="safety.html">Trust & Safety</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Contact Modal -->
+  <div class="contact-modal" id="contactModal">
+    <div class="contact-modal-content">
+      <div class="close-contact-modal"><i class="fas fa-times"></i></div>
+      <h2>TRANSMIT MESSAGE</h2>
+      <p>Establish a secure line with the Syndicate.</p>
+      <form class="syndicate-contact-form">
+        <div class="form-row">
+          <input type="text" placeholder="Agent Name" required>
+          <input type="email" placeholder="Encrypted Email" required>
+        </div>
+        <input type="text" placeholder="Subject" required>
+        <textarea placeholder="Message Log" rows="4" required></textarea>
+        <button type="submit" class="transmit-btn">SEND TRANSMISSION</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="JS files/main.js"></script>
+
+  <script>
+    // Password visibility toggle
+    const togglePassword = document.querySelector('#togglePassword');
+    const passwordField = document.querySelector('#passwordField');
+
+    togglePassword.addEventListener('click', function (e) {
+      const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
+      passwordField.setAttribute('type', type);
+      this.classList.toggle('fa-eye-slash');
+    });
+
+    document.getElementById('loginForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Authentication Successful. Redirecting...');
+      window.location.href = 'index.html';
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hoodies | SoulThread Syndicate</title>
+  <link rel="stylesheet" href="CSS/style.css">
+  <link rel="stylesheet" href="CSS/responsive.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="icon" type="image/png" href="Assets/images/logo-v3.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body class="store-page">
+
+  <!-- MAIN HEADER -->
+  <header class="header">
+    <div class="nav-container">
+      <a href="index.html" class="logo" style="display: flex; align-items: center;">
+        <img src="Assets/images/logo-v3.png" alt="SoulThread Logo" style="height: 50px; filter: drop-shadow(0 0 10px rgba(0, 174, 255, 0.4));">
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="store.html" class="active">Store</a>
+        <a href="commissions.html">Commissions</a>
+        <a href="apparel.html">Apparel</a>
+        <a href="blog.html">Blog</a>
+      </nav>
+      <div class="nav-actions">
+        <div class="cart-icon-wrap">
+          <i class="fas fa-shopping-bag"></i>
+          <span class="cart-badge">0</span>
+        </div>
+        <a href="login.html" class="login-btn">LOGIN</a>
+        <a href="signup.html" class="signup-btn">SIGN UP</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- RAPTR SUB-NAV -->
+  <div class="sub-nav">
+    <div class="sub-nav-container">
+      <div class="sub-links">
+        <div class="dropdown">
+          <div class="dropdown-trigger">Apparel & Hoodies <i class="fas fa-chevron-down"></i></div>
+          <div class="dropdown-content">
+            <a href="hoodies.html">Hoodies</a>
+            <a href="t-shirts.html">T-Shirts</a>
+            <a href="tactical-vests.html">Tactical Vests</a>
+            <a href="patches.html">Patches</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <div class="dropdown-trigger">Digital Art Services <i class="fas fa-chevron-down"></i></div>
+          <div class="dropdown-content">
+            <a href="custom-portraits.html">Custom Portraits</a>
+            <a href="mecha-designs.html">Mecha Designs</a>
+            <a href="character-sheets.html">Character Sheets</a>
+            <a href="logo-branding.html">Logo Branding</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <div class="dropdown-trigger">Comics & Prints <i class="fas fa-chevron-down"></i></div>
+          <div class="dropdown-content">
+            <a href="manga-chapters.html">Manga Chapters</a>
+            <a href="poster-prints.html">Poster Prints</a>
+            <a href="limited-editions.html">Limited Editions</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- CART DRAWER & OVERLAY -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-drawer-header">
+      <h2>SYNDICATE CART</h2>
+      <div class="close-cart" id="closeCart"><i class="fas fa-times"></i></div>
+    </div>
+    <div class="cart-items-list" id="cartItemsList">
+      <div class="empty-cart-msg">Your syndicate gear bag is empty.</div>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>TOTAL</span>
+        <span id="cartTotalDisplay">Rs 0</span>
+      </div>
+      <button class="checkout-btn">PROCEED TO CHECKOUT</button>
+    </div>
+  </div>
+
+  <main class="store-main">
+    <div class="store-title-wrap" style="text-align: center; margin: 80px 0 40px;">
+      <h1 style="font-family: 'Orbitron', sans-serif; font-size: 3.5rem; color: #fff; text-transform: uppercase; letter-spacing: 5px;">HOODIES</h1>
+      <p style="color: var(--accent); font-weight: 800; letter-spacing: 3px; text-transform: uppercase;">Premium Tactical Streetwear</p>
+    </div>
+
+    <div class="store-content-layout" style="max-width: 1400px; margin: 0 auto; padding: 40px 20px;">
+      <div class="raptr-store-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px;">
+        
+        <!-- Product 1 -->
+        <div class="product-card" data-category="apparel" data-price="5500" data-stock="true">
+          <div class="wishlist-icon"><i class="far fa-heart"></i></div>
+          <div class="product-img">
+            <img src="Assets/images/Urban Street Hoodie.1.jpg" alt="Urban Street Hoodie" style="width: 100%; height: 350px; object-fit: cover; border-radius: 12px;">
+          </div>
+          <div class="product-info">
+            <h4>Urban Street Hoodie</h4>
+            <div class="product-price-row"><span>Rs 5,500</span></div>
+            <button class="buy-btn">ADD TO CART</button>
+          </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product-card" data-category="apparel" data-price="6500" data-stock="true">
+          <div class="wishlist-icon"><i class="far fa-heart"></i></div>
+          <div class="product-img">
+            <img src="Assets/images/Cyber-Neon Hoodie V5.1.jpg" alt="Cyber-Neon Hoodie" style="width: 100%; height: 350px; object-fit: cover; border-radius: 12px;">
+          </div>
+          <div class="product-info">
+            <h4>Cyber-Neon Hoodie V5</h4>
+            <div class="product-price-row"><span>Rs 6,500</span></div>
+            <button class="buy-btn">ADD TO CART</button>
+          </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product-card" data-category="apparel" data-price="9000" data-stock="true">
+          <div class="wishlist-icon"><i class="far fa-heart"></i></div>
+          <div class="product-img">
+            <img src="Assets/images/Premium Cyber Hoodie.jpg" alt="Premium Cyber Hoodie" style="width: 100%; height: 350px; object-fit: cover; border-radius: 12px;">
+          </div>
+          <div class="product-info">
+            <h4>Premium Cyber Hoodie</h4>
+            <div class="product-price-row"><span>Rs 9,000</span></div>
+            <button class="buy-btn">ADD TO CART</button>
+          </div>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="product-card" data-category="apparel" data-price="10000" data-stock="true">
+          <div class="wishlist-icon"><i class="far fa-heart"></i></div>
+          <div class="product-img">
+            <img src="Assets/images/Ronin Stealth Hoodie.jpg" alt="Ronin Stealth Hoodie" style="width: 100%; height: 350px; object-fit: cover; border-radius: 12px;">
+          </div>
+          <div class="product-info">
+            <h4>Ronin Stealth Hoodie</h4>
+            <div class="product-price-row"><span>Rs 10,000</span></div>
+            <button class="buy-btn">ADD TO CART</button>
+          </div>
+        </div>
+
+        <!-- Product 5 -->
+        <div class="product-card" data-category="apparel" data-price="12000" data-stock="true">
+          <div class="wishlist-icon"><i class="far fa-heart"></i></div>
+          <div class="product-img">
+            <img src="Assets/images/Hoodie - Glitch Series.jpg" alt="Glitch Hoodie" style="width: 100%; height: 350px; object-fit: cover; border-radius: 12px;">
+          </div>
+          <div class="product-info">
+            <h4>Glitch Hoodie - Limited</h4>
+            <div class="product-price-row"><span>Rs 12,000</span></div>
+            <button class="buy-btn">ADD TO CART</button>
+          </div>
+        </div>
+
+        <!-- Product 6 -->
+        <div class="product-card" data-category="apparel" data-price="7500" data-stock="true">
+          <div class="wishlist-icon"><i class="far fa-heart"></i></div>
+          <div class="product-img">
+            <img src="Assets/images/Urban Street Hoodie.2.jpg" alt="Neo-Tokyo Hoodie" style="width: 100%; height: 350px; object-fit: cover; border-radius: 12px;">
+          </div>
+          <div class="product-info">
+            <h4>Neo-Tokyo Edition Hoodie</h4>
+            <div class="product-price-row"><span>Rs 7,500</span></div>
+            <button class="buy-btn">ADD TO CART</button>
+          </div>
+        </div>
+
+        <!-- Product 7 -->
+        <div class="product-card" data-category="apparel" data-price="8200" data-stock="true">
+          <div class="wishlist-icon"><i class="far fa-heart"></i></div>
+          <div class="product-img">
+            <img src="Assets/images/Urban Street Hoodie.3.jpg" alt="Syndicate Stealth Hoodie" style="width: 100%; height: 350px; object-fit: cover; border-radius: 12px;">
+          </div>
+          <div class="product-info">
+            <h4>Syndicate Stealth Hoodie</h4>
+            <div class="product-price-row"><span>Rs 8,200</span></div>
+            <button class="buy-btn">ADD TO CART</button>
+          </div>
+        </div>
+
+        <!-- Product 8 -->
+        <div class="product-card" data-category="apparel" data-price="6800" data-stock="true">
+          <div class="wishlist-icon"><i class="far fa-heart"></i></div>
+          <div class="product-img">
+            <img src="Assets/images/Cyber-Neon Hoodie V5.2.jpg" alt="Cyber-Neon Hoodie V5" style="width: 100%; height: 350px; object-fit: cover; border-radius: 12px;">
+          </div>
+          <div class="product-info">
+            <h4>Cyber-Neon Hoodie V5 (Alt)</h4>
+            <div class="product-price-row"><span>Rs 6,800</span></div>
+            <button class="buy-btn">ADD TO CART</button>
+          </div>
+        </div>
+
+        <!-- Product 9 -->
+        <div class="product-card" data-category="apparel" data-price="5500" data-stock="true">
+          <div class="wishlist-icon"><i class="far fa-heart"></i></div>
+          <div class="product-img">
+            <img src="Assets/images/Urban Street Hoodie.jpg" alt="Urban Street Hoodie" style="width: 100%; height: 350px; object-fit: cover; border-radius: 12px;">
+          </div>
+          <div class="product-info">
+            <h4>Urban Street Hoodie (Base)</h4>
+            <div class="product-price-row"><span>Rs 5,500</span></div>
+            <button class="buy-btn">ADD TO CART</button>
+          </div>
+        </div>
+
+        <!-- Product 10 -->
+        <div class="product-card" data-category="apparel" data-price="6500" data-stock="true">
+          <div class="wishlist-icon"><i class="far fa-heart"></i></div>
+          <div class="product-img">
+            <img src="Assets/images/Cyber-Neon Hoodie V5.jpg" alt="Cyber-Neon Hoodie" style="width: 100%; height: 350px; object-fit: cover; border-radius: 12px;">
+          </div>
+          <div class="product-info">
+            <h4>Cyber-Neon Hoodie V5 (Core)</h4>
+            <div class="product-price-row"><span>Rs 6,500</span></div>
+            <button class="buy-btn">ADD TO CART</button>
+          </div>
+        </div>
+
+        <!-- Product 11 -->
+        <div class="product-card" data-category="apparel" data-price="12500" data-stock="true">
+          <div class="wishlist-icon"><i class="far fa-heart"></i></div>
+          <div class="product-img">
+            <img src="Assets/images/Techwear Jacket - V1.jpg" alt="Techwear Jacket" style="width: 100%; height: 350px; object-fit: cover; border-radius: 12px;">
+          </div>
+          <div class="product-info">
+            <h4>Syndicate Utility Jacket</h4>
+            <div class="product-price-row"><span>Rs 12,500</span></div>
+            <button class="buy-btn">ADD TO CART</button>
+          </div>
+        </div>
+
+        <!-- Product 12 -->
+        <div class="product-card" data-category="apparel" data-price="11000" data-stock="true">
+          <div class="wishlist-icon"><i class="far fa-heart"></i></div>
+          <div class="product-img">
+            <img src="Assets/images/Techwear Jacket - V1.1.jpg" alt="Techwear Jacket" style="width: 100%; height: 350px; object-fit: cover; border-radius: 12px;">
+          </div>
+          <div class="product-info">
+            <h4>Cyber-Stealth Jacket</h4>
+            <div class="product-price-row"><span>Rs 11,000</span></div>
+            <button class="buy-btn">ADD TO CART</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <a href="index.html" class="logo" style="display: block; margin-bottom: 20px;">
+          <img src="Assets/images/logo-v3.png" alt="SoulThread Logo" style="height: 80px; filter: drop-shadow(0 0 15px rgba(0, 174, 255, 0.3));">
+        </a>
+        <p>Your ultimate destination for premium art gear, elite commissions, and the latest creative content.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <div class="social-icons-row">
+          <a href="#" class="social-icon-box"><i class="fab fa-discord"></i></a>
+          <a href="#" class="social-icon-box"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-icon-box"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <div class="help-title">Need Help?</div>
+        <p>Our team is always ready to chat.</p>
+        <a href="javascript:void(0)" class="get-in-touch-btn">Get in Touch <i class="fas fa-arrow-right" style="margin-left: 10px;"></i></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-container">
+        <p>© 2026 SoulThread Syndicate. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+          <a href="faq.html">FAQ</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="JS files/main.js"></script>
+</body>
+</html>

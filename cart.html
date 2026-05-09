@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart | SoulThread</title>
+  <link rel="icon" type="image/svg+xml" href="Assets/images/favicon.svg">
+  <link rel="stylesheet" href="CSS/style.css">
+  <link rel="stylesheet" href="CSS/responsive.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header scrolled" id="header">
+    <div class="nav-container">
+      <div class="logo">SoulThread</div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="store.html">Store</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i></a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Cart -->
+  <section class="cart">
+    <div class="container">
+      <h1>Your Cart</h1>
+      <div class="cart-items" id="cart-items">
+        <div class="cart-item">
+          <img src="Assets/images/hoodie_prod_1777238758809.png" alt="Premium Hoodie">
+          <div class="item-details">
+            <h4>Premium Hoodie</h4>
+            <p>Rs. 5,000</p>
+            <div class="quantity-controls">
+              <button class="qty-btn" data-action="decrease">-</button>
+              <span class="qty">1</span>
+              <button class="qty-btn" data-action="increase">+</button>
+            </div>
+          </div>
+          <button class="remove-btn">Remove</button>
+        </div>
+        <div class="cart-item">
+          <img src="Assets/images/product_art_1777236847250.png" alt="Art Print">
+          <div class="item-details">
+            <h4>Art Print</h4>
+            <p>Rs. 2,000</p>
+            <div class="quantity-controls">
+              <button class="qty-btn" data-action="decrease">-</button>
+              <span class="qty">2</span>
+              <button class="qty-btn" data-action="increase">+</button>
+            </div>
+          </div>
+          <button class="remove-btn">Remove</button>
+        </div>
+      </div>
+      <div class="cart-summary">
+        <div class="summary-row">
+          <span>Subtotal:</span>
+          <span id="subtotal">Rs. 9,000</span>
+        </div>
+        <div class="summary-row">
+          <span>Shipping:</span>
+          <span>Rs. 200</span>
+        </div>
+        <div class="summary-row total">
+          <span>Total:</span>
+          <span id="total">Rs. 9,200</span>
+        </div>
+        <a href="checkout.html" class="btn checkout-btn">Proceed to Checkout</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 SoulThread. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Theme Toggle -->
+  <div class="theme-toggle" id="theme-toggle">
+    <i class="fas fa-moon"></i>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Cart Functionality
+    const cartItems = document.querySelectorAll('.cart-item');
+    const subtotalEl = document.getElementById('subtotal');
+    const totalEl = document.getElementById('total');
+
+    function updateTotals() {
+      let subtotal = 0;
+      cartItems.forEach(item => {
+        const price = parseInt(item.querySelector('.item-details p').textContent.replace('Rs. ', '').replace(',', ''));
+        const qty = parseInt(item.querySelector('.qty').textContent);
+        subtotal += price * qty;
+      });
+      subtotalEl.textContent = `Rs. ${subtotal.toLocaleString()}`;
+      totalEl.textContent = `Rs. ${(subtotal + 200).toLocaleString()}`;
+    }
+
+    cartItems.forEach(item => {
+      const qtyBtns = item.querySelectorAll('.qty-btn');
+      const qtySpan = item.querySelector('.qty');
+
+      qtyBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          let qty = parseInt(qtySpan.textContent);
+          if (btn.getAttribute('data-action') === 'increase') {
+            qty++;
+          } else if (qty > 1) {
+            qty--;
+          }
+          qtySpan.textContent = qty;
+          updateTotals();
+        });
+      });
+
+      const removeBtn = item.querySelector('.remove-btn');
+      removeBtn.addEventListener('click', () => {
+        item.remove();
+        updateTotals();
+      });
+    });
+
+    updateTotals();
+  </script>
+</body>
+</html>

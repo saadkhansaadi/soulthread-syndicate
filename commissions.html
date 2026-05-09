@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Commissions | SoulThread Syndicate</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="CSS/style.css">
+  <link rel="stylesheet" href="CSS/responsive.css">
+  <link rel="icon" type="image/png" href="Assets/images/logo-v3.png">
+  <style>
+    .comm-hero { 
+      background: #0b0e14;
+      text-align: center;
+      border-bottom: 1px solid #00fbff;
+      margin-bottom: 80px;
+      position: relative;
+      height: 400px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .comm-hero .nav-container {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 60px 20px 30px;
+    }
+    .comm-hero-content {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .comm-hero h1 { 
+      font-size: 4rem; 
+      font-weight: 900; 
+      letter-spacing: 3px; 
+      margin: 0; 
+      color: #fff;
+    }
+    .comm-hero p {
+      color: #00fbff;
+      font-weight: 800;
+      font-size: 1.2rem;
+      letter-spacing: 2px;
+      margin: 0;
+    }
+    
+    .comm-grid { 
+      display: flex; 
+      flex-direction: column;
+      gap: 40px; 
+      max-width: 1000px; 
+      margin: 0 auto 100px; 
+      padding: 0 20px; 
+    }
+    .comm-card {
+      background: #0b0e14;
+      border: 1px solid #00fbff;
+      border-radius: 20px;
+      overflow: hidden;
+      transition: 0.3s;
+      display: flex;
+      align-items: stretch;
+      text-decoration: none;
+      color: inherit;
+    }
+    .comm-card:hover { 
+      background: #11151c;
+      transform: translateY(-5px); 
+    }
+    .card-img-wrapper {
+      flex: 0 0 45%;
+      overflow: hidden;
+    }
+    .comm-card img { 
+      width: 100%; 
+      height: 100%; 
+      object-fit: cover; 
+      transition: 0.5s;
+    }
+    .comm-card:hover img {
+      transform: scale(1.05);
+    }
+    .comm-info { 
+      padding: 50px; 
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+    }
+    .process-badge {
+      background: transparent;
+      color: #00fbff;
+      border: 1px solid #00fbff;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 900;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .comm-info h3 { font-size: 2rem; font-weight: 900; margin-bottom: 15px; color: #fff; }
+    .comm-info p { color: #bbb; line-height: 1.8; margin-bottom: 25px; font-size: 1.05rem; }
+    
+    .price-tag { font-size: 1.4rem; font-weight: 900; color: #00fbff; display: block; margin-bottom: 30px; }
+    
+    .request-btn {
+      display: inline-block;
+      padding: 15px 40px;
+      background: transparent;
+      color: #00fbff;
+      border: 1px solid #00fbff;
+      border-radius: 8px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: 0.3s;
+    }
+    .comm-card:hover .request-btn { 
+      background: #00fbff; 
+      color: #0b0e14; 
+    }
+
+    @media (max-width: 900px) {
+      .comm-card { flex-direction: column; }
+      .card-img-wrapper { height: 300px; }
+      .comm-info { padding: 30px; }
+    }
+  </style>
+</head>
+<body class="comm-page">
+
+  <!-- MAIN HEADER (SYNCED) -->
+  <header class="header">
+    <div class="nav-container">
+      <a href="index.html" class="logo" style="display: flex; align-items: center;">
+        <img src="Assets/images/logo-v3.png" alt="SoulThread Logo" style="height: 50px; filter: drop-shadow(0 0 10px rgba(0, 174, 255, 0.4));">
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <div class="dropdown">
+          <a href="store.html" class="dropdown-trigger">Store <i class="fas fa-chevron-down" style="font-size: 0.6rem; margin-left: 5px;"></i></a>
+          <div class="dropdown-content">
+            <a href="apparel.html"><i class="fas fa-tshirt"></i> Apparel</a>
+            <a href="manga.html"><i class="fas fa-book-open"></i> Manga</a>
+            <a href="logos.html"><i class="fas fa-pen-nib"></i> Logos</a>
+            <a href="characters.html"><i class="fas fa-user-ninja"></i> Characters</a>
+            <a href="digital-art.html"><i class="fas fa-palette"></i> Digital Art</a>
+            <a href="prints.html"><i class="fas fa-print"></i> Prints</a>
+          </div>
+        </div>
+        <a href="commissions.html" class="active">Commissions</a>
+        <a href="apparel.html">Apparel</a>
+        <a href="blog.html">Blog</a>
+      </nav>
+      <div class="nav-actions">
+        <div class="cart-icon-wrap"><i class="fas fa-shopping-bag"></i><span class="cart-badge">0</span></div>
+        <a href="login.html" class="login-btn">LOGIN</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="comm-hero">
+      <div class="nav-container">
+        <div class="comm-hero-content">
+          <h1>BRING YOUR VISION TO LIFE</h1>
+        </div>
+        <p>Custom Art & Tactical Gear tailored for the Syndicate.</p>
+      </div>
+    </section>
+
+    <div class="comm-grid">
+      <!-- Service 1 -->
+      <a href="request-brief.html" class="comm-card">
+        <div class="card-img-wrapper">
+          <img src="Assets/images/Full Body Character Art.jpg" alt="Art Comm">
+        </div>
+        <div class="comm-info">
+          <div class="process-badge">3-Week Turnaround</div>
+          <h3>Full Character Illustration</h3>
+          <p>High-fidelity character design in Manga or Cyberpunk style. Includes full coloring, shading, and source files.</p>
+          <span class="price-tag">Starting from Rs 15,000</span>
+          <div class="request-btn">REQUEST BRIEF</div>
+        </div>
+      </a>
+      <!-- Service 2 -->
+      <a href="request-brief.html" class="comm-card">
+        <div class="card-img-wrapper">
+          <img src="Assets/images/Premium Cyber Hoodie.jpg" alt="Apparel Comm">
+        </div>
+        <div class="comm-info">
+          <div class="process-badge">4-Week Turnaround</div>
+          <h3>Custom Tactical Hoodie</h3>
+          <p>One-of-a-kind hoodie design tailored to your aesthetic. Choose your fabric, patches, and custom embroidery.</p>
+          <span class="price-tag">Starting from Rs 8,500</span>
+          <div class="request-btn">REQUEST BRIEF</div>
+        </div>
+      </a>
+      <!-- Service 3 -->
+      <a href="request-brief.html" class="comm-card">
+        <div class="card-img-wrapper">
+          <img src="Assets/images/Vector Art Logo Design.1.jpg" alt="Branding Comm">
+        </div>
+        <div class="comm-info">
+          <div class="process-badge">2-Week Turnaround</div>
+          <h3>Elite Branding Package</h3>
+          <p>Complete visual identity including primary logo, alternate marks, typography, and color palette guide.</p>
+          <span class="price-tag">Starting from Rs 12,000</span>
+          <div class="request-btn">REQUEST BRIEF</div>
+        </div>
+      </a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <a href="index.html" class="logo" style="display: block; margin-bottom: 20px;">
+          <img src="Assets/images/logo-v3.png" alt="SoulThread Logo" style="height: 80px; filter: drop-shadow(0 0 15px rgba(0, 174, 255, 0.3));">
+        </a>
+        <p>Your ultimate destination for premium art gear, elite commissions, and the latest creative content. Level up your aesthetic experience with us.</p>
+      </div>
+
+      <!-- Column 2 -->
+      <div class="footer-col">
+        <h4>Connect With Us</h4>
+        <div class="social-icons-row">
+          <a href="#" class="social-icon-box fb"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-icon-box dc"><i class="fab fa-discord"></i></a>
+          <a href="#" class="social-icon-box ig"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-icon-box li"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="social-icon-box tw"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+
+      <!-- Column 3 -->
+      <div class="footer-col">
+        <div class="help-title">Need Help?</div>
+        <p>Whether you have a question or just want to say hi, our team is always ready to chat.</p>
+        <a href="javascript:void(0)" class="get-in-touch-btn">Get in Touch <i class="fas fa-arrow-right" style="margin-left: 10px;"></i></a>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="footer-bottom">
+      <div class="footer-bottom-container">
+        <p>© 2026 SoulThread Syndicate. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="faq.html">FAQ</a>
+          <a href="blog.html">Blog</a>
+          <a href="safety.html">Trust & Safety</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Contact Modal -->
+  <div class="contact-modal" id="contactModal">
+    <div class="contact-modal-content">
+      <div class="close-contact-modal"><i class="fas fa-times"></i></div>
+      <h2>TRANSMIT MESSAGE</h2>
+      <p>Establish a secure line with the Syndicate.</p>
+      <form class="syndicate-contact-form">
+        <div class="form-row">
+          <input type="text" placeholder="Agent Name" required>
+          <input type="email" placeholder="Encrypted Email" required>
+        </div>
+        <input type="text" placeholder="Subject" required>
+        <textarea placeholder="Message Log" rows="4" required></textarea>
+        <button type="submit" class="transmit-btn">SEND TRANSMISSION</button>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>

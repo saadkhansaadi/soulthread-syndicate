@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logos | SoulThread Syndicate</title>
+  <link rel="icon" type="image/png" href="Assets/images/logo-v3.png">
+  <link rel="stylesheet" href="CSS/style.css">
+  <link rel="stylesheet" href="CSS/responsive.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    /* 1. Journey Section (Black Container) */
+    .journey-section { padding: 80px 5%; background: #0a0a0c; color: #fff; text-align: center; }
+    .workflow-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin: 50px 0; }
+    .step-card { background: rgba(255,255,255,0.05); padding: 30px; border-radius: 15px; border: 1px solid rgba(0,242,255,0.2); transition: 0.3s; }
+    .step-card:hover { border-color: var(--raptr-cyan); transform: translateY(-10px); }
+    .step-card i { font-size: 2.5rem; color: var(--raptr-cyan); margin-bottom: 20px; }
+    .step-card h3 { margin-bottom: 15px; text-transform: uppercase; letter-spacing: 2px; font-size: 1.1rem; }
+    
+    /* 2. Catalogue Section (Store Grid) */
+    .catalogue-section { padding: 80px 5%; background: #050505; }
+    .raptr-store-grid { 
+      display: grid; 
+      grid-template-columns: repeat(4, 1fr); 
+      gap: 25px; 
+    }
+
+    .product-card { 
+      background: rgba(255,255,255,0.03); 
+      border-radius: 20px; 
+      overflow: hidden; 
+      border: 1px solid rgba(255,255,255,0.05); 
+      transition: 0.4s;
+    }
+    .product-card:hover { transform: translateY(-10px); border-color: var(--raptr-blue); box-shadow: 0 10px 30px rgba(0, 102, 255, 0.2); }
+    
+    .product-img { width: 100%; height: 260px; overflow: hidden; background: #111; }
+    .product-img img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+    .product-card:hover .product-img img { transform: scale(1.1); }
+    
+    .product-info { padding: 25px; text-align: center; }
+    .product-info h4 { font-size: 1.2rem; margin-bottom: 10px; color: #fff; font-weight: 700; }
+    .product-price-row { margin-bottom: 20px; }
+    .product-price-row span { color: var(--raptr-cyan); font-weight: 900; font-size: 1.3rem; }
+    
+    .buy-btn { 
+      width: 100%; padding: 15px; background: var(--raptr-blue); color: #fff; 
+      border: none; border-radius: 10px; font-weight: 800; cursor: pointer; transition: 0.3s;
+      text-transform: uppercase; letter-spacing: 1px;
+    }
+    .buy-btn:hover { background: #fff; color: #000; }
+
+    /* Responsive */
+    @media (max-width: 1200px) { .raptr-store-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 768px) { .raptr-store-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body class="home-page">
+  <!-- 1. HEADER -->
+  <header class="header">
+    <div class="nav-container">
+      <a href="index.html" class="logo" style="display: flex; align-items: center;">
+        <img src="Assets/images/logo-v3.png" alt="SoulThread Logo" style="height: 50px; filter: drop-shadow(0 0 10px rgba(0, 174, 255, 0.4));">
+      </a>
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+          <div class="dropdown">
+            <a href="store.html" class="dropdown-trigger">Store <i class="fas fa-chevron-down" style="font-size: 0.6rem; margin-left: 5px;"></i></a>
+            <div class="dropdown-content">
+              <a href="apparel.html"><i class="fas fa-tshirt"></i> Apparel</a>
+              <a href="manga.html"><i class="fas fa-book-open"></i> Manga</a>
+              <a href="logos.html"><i class="fas fa-pen-nib"></i> Logos</a>
+              <a href="characters.html"><i class="fas fa-user-ninja"></i> Characters</a>
+              <a href="digital-art.html"><i class="fas fa-palette"></i> Digital Art</a>
+              <a href="prints.html"><i class="fas fa-print"></i> Prints</a>
+            </div>
+          </div>
+          <a href="commissions.html">Commissions</a>
+          <a href="apparel.html">Apparel</a>
+          <a href="logos.html" class="active">Logos</a>
+          <a href="characters.html">Characters</a>
+          <a href="prints.html">Prints</a>
+        </nav>
+      <div class="nav-actions">
+        <div class="cart-icon-wrap"><i class="fas fa-shopping-bag"></i><span class="cart-badge">0</span></div>
+        <a href="login.html" class="login-btn">LOGIN</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 3. LOGO CREATION JOURNEY (Restored) -->
+    <section class="journey-section">
+      <h2 class="section-title">LOGO CREATION JOURNEY</h2>
+      <p style="opacity:0.6;">The process of building a legendary visual identity.</p>
+      
+      <div class="workflow-grid">
+        <div class="step-card">
+          <i class="fas fa-brain"></i>
+          <h3>Brainstorming</h3>
+          <p>Deep dive into brand values, mood boards, and unique core concepts.</p>
+        </div>
+        <div class="step-card">
+          <i class="fas fa-pen-nib"></i>
+          <h3>Designing</h3>
+          <p>Iterative sketching and vector refinement for a timeless mark.</p>
+        </div>
+        <div class="step-card">
+          <i class="fas fa-layer-group"></i>
+          <h3>Mockup</h3>
+          <p>Visualizing the logo across digital and physical gear assets.</p>
+        </div>
+        <div class="step-card">
+          <i class="fas fa-check-circle"></i>
+          <h3>Final Branding</h3>
+          <p>Comprehensive style guides and high-fidelity file delivery.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. LOGO CATALOGUE (Fixed 4-Column Grid) -->
+    <section class="catalogue-section">
+      <h2 class="section-title" style="text-align:center; margin-bottom:50px;">ELITE LOGO CATALOGUE</h2>
+      <div class="raptr-store-grid">
+        <!-- Card 1 -->
+        <div class="product-card">
+          <div class="product-img"><img src="Assets/images/Vector Art Logo Design.1.jpg" alt="Logo" style="width: 100%; height: 280px; object-fit: cover; aspect-ratio: 1/1; border-radius: 12px; filter: brightness(0.8) contrast(1.1);"></div>
+          <div class="product-info">
+            <h4>Neon Tech Pack</h4>
+            <div class="product-price-row"><span>Rs 4,500</span></div>
+            <button class="buy-btn">ADD TO CART</button>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="product-card">
+          <div class="product-img"><img src="Assets/images/Logo Pack (5 Items).1.jpg" alt="Logo" style="width: 100%; height: 280px; object-fit: cover; aspect-ratio: 1/1; border-radius: 12px; filter: brightness(0.8) contrast(1.1);"></div>
+          <div class="product-info">
+            <h4>Cyber Samurai</h4>
+            <div class="product-price-row"><span>Rs 5,200</span></div>
+            <button class="buy-btn">ADD TO CART</button>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="product-card">
+          <div class="product-img"><img src="Assets/images/logo-v3.png" alt="Logo" style="width: 100%; height: 280px; object-fit: cover; aspect-ratio: 1/1; border-radius: 12px; filter: brightness(0.8) contrast(1.1);"></div>
+          <div class="product-info">
+            <h4>Minimalist Glyph</h4>
+            <div class="product-price-row"><span>Rs 3,800</span></div>
+            <button class="buy-btn">ADD TO CART</button>
+          </div>
+        </div>
+        <!-- Card 4 -->
+        <div class="product-card">
+          <div class="product-img"><img src="Assets/images/Vector Art Logo Design.jpg" alt="Logo" style="width: 100%; height: 280px; object-fit: cover; aspect-ratio: 1/1; border-radius: 12px; filter: brightness(0.8) contrast(1.1);"></div>
+          <div class="product-info">
+            <h4>Vaporwave Icon</h4>
+            <div class="product-price-row"><span>Rs 4,100</span></div>
+            <button class="buy-btn">ADD TO CART</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <!-- Column 1 -->
+      <div class="footer-col">
+        <a href="index.html" class="logo" style="display: block; margin-bottom: 20px;">
+          <img src="Assets/images/logo-v3.png" alt="SoulThread Logo" style="height: 80px; filter: drop-shadow(0 0 15px rgba(0, 174, 255, 0.3));">
+        </a>
+        <p>Your ultimate destination for premium art gear, elite commissions, and the latest creative content. Level up your aesthetic experience with us.</p>
+      </div>
+
+      <!-- Column 2 -->
+      <div class="footer-col">
+        <h4>Connect With Us</h4>
+        <div class="social-icons-row">
+          <a href="#" class="social-icon-box fb"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-icon-box dc"><i class="fab fa-discord"></i></a>
+          <a href="#" class="social-icon-box ig"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-icon-box li"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="social-icon-box tw"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+
+      <!-- Column 3 -->
+      <div class="footer-col">
+        <div class="help-title">Need Help?</div>
+        <p>Whether you have a question or just want to say hi, our team is always ready to chat.</p>
+        <a href="javascript:void(0)" class="get-in-touch-btn">Get in Touch <i class="fas fa-arrow-right" style="margin-left: 10px;"></i></a>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="footer-bottom">
+      <div class="footer-bottom-container">
+        <p>© 2026 SoulThread Syndicate. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="faq.html">FAQ</a>
+          <a href="blog.html">Blog</a>
+          <a href="safety.html">Trust & Safety</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Contact Modal -->
+  <div class="contact-modal" id="contactModal">
+    <div class="contact-modal-content">
+      <div class="close-contact-modal"><i class="fas fa-times"></i></div>
+      <h2>TRANSMIT MESSAGE</h2>
+      <p>Establish a secure line with the Syndicate.</p>
+      <form class="syndicate-contact-form">
+        <div class="form-row">
+          <input type="text" placeholder="Agent Name" required>
+          <input type="email" placeholder="Encrypted Email" required>
+        </div>
+        <input type="text" placeholder="Subject" required>
+        <textarea placeholder="Message Log" rows="4" required></textarea>
+        <button type="submit" class="transmit-btn">SEND TRANSMISSION</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Cart Logic Overlay -->
+  <div id="cartOverlay" class="cart-overlay"></div>
+  <div id="cartDrawer" class="cart-drawer">
+    <div class="cart-header">
+      <h3>Syndicate Gear Bag</h3>
+      <button id="closeCart"><i class="fas fa-times"></i></button>
+    </div>
+    <div id="cartItemsList" class="cart-items"></div>
+    <div class="cart-footer">
+      <div class="cart-total">Total: <span id="cartTotalDisplay">Rs 0</span></div>
+      <button class="checkout-btn">Proceed to Checkout</button>
+    </div>
+  </div>
+
+  <script src="JS files/main.js"></script>
+</body>
+</html>

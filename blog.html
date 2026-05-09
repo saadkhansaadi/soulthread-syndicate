@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog | SoulThread Syndicate</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="icon" type="image/png" href="Assets/images/logo-v3.png">
+  <link rel="stylesheet" href="CSS/style.css">
+  <link rel="stylesheet" href="CSS/responsive.css">
+  <style>
+    .blog-hero { 
+      background: #0b0e14;
+      text-align: center;
+      border-bottom: 1px solid #00fbff;
+      position: relative;
+      height: 400px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .blog-hero .nav-container {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 60px 20px 30px;
+    }
+    .blog-hero-content {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .blog-hero h1 { 
+      font-size: 4rem; 
+      font-weight: 900; 
+      letter-spacing: 5px; 
+      margin: 0; 
+      color: #fff;
+    }
+    .blog-hero p {
+      color: #00fbff;
+      font-weight: 800;
+      font-size: 1.2rem;
+      letter-spacing: 2px;
+      margin: 0;
+    }
+    
+    .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; max-width: 1200px; margin: 0 auto 100px; padding: 0 20px; }
+    .blog-card {
+      background: #0b0e14;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #00fbff;
+      transition: 0.3s;
+    }
+    .blog-card:hover { background: #11151c; transform: translateY(-5px); }
+    .blog-card img { width: 100%; height: 320px; object-fit: cover; border-bottom: 1px solid #00fbff; }
+    .blog-content { padding: 30px 25px; }
+    .blog-date { font-size: 0.7rem; color: #00fbff; font-weight: 800; text-transform: uppercase; margin-bottom: 10px; display: block; }
+    .blog-content h3 { font-size: 1.4rem; font-weight: 800; margin-bottom: 15px; color: #fff; line-height: 1.4; }
+    .blog-content p { font-size: 0.9rem; color: #888; line-height: 1.6; margin-bottom: 25px; }
+    .read-more { color: #fff; font-weight: 900; font-size: 0.8rem; text-transform: uppercase; border-bottom: 2px solid #00fbff; padding-bottom: 5px; transition: 0.3s; text-decoration: none; }
+    .read-more:hover { color: #00fbff; }
+  </style>
+</head>
+<body class="blog-page">
+
+  <!-- MAIN HEADER -->
+  <header class="header">
+    <div class="nav-container">
+      <a href="index.html" class="logo" style="display: flex; align-items: center;">
+        <img src="Assets/images/logo-v3.png" alt="SoulThread Logo" style="height: 50px; filter: drop-shadow(0 0 10px rgba(0, 174, 255, 0.4));">
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <div class="dropdown">
+          <a href="store.html" class="dropdown-trigger">Store <i class="fas fa-chevron-down" style="font-size: 0.6rem; margin-left: 5px;"></i></a>
+          <div class="dropdown-content">
+            <a href="apparel.html"><i class="fas fa-tshirt"></i> Apparel</a>
+            <a href="manga.html"><i class="fas fa-book-open"></i> Manga</a>
+            <a href="logos.html"><i class="fas fa-pen-nib"></i> Logos</a>
+            <a href="characters.html"><i class="fas fa-user-ninja"></i> Characters</a>
+            <a href="digital-art.html"><i class="fas fa-palette"></i> Digital Art</a>
+            <a href="prints.html"><i class="fas fa-print"></i> Prints</a>
+          </div>
+        </div>
+        <a href="commissions.html">Commissions</a>
+        <a href="apparel.html">Apparel</a>
+        <a href="blog.html" class="active">Blog</a>
+      </nav>
+      <div class="nav-actions">
+        <div class="cart-icon-wrap"><i class="fas fa-shopping-bag"></i><span class="cart-badge">0</span></div>
+        <a href="login.html" class="login-btn">LOGIN</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="blog-hero">
+      <div class="nav-container">
+        <div class="blog-hero-content">
+          <h1>SYNDICATE INTEL</h1>
+        </div>
+        <p>LATEST UPDATES, ART TIPS, AND GEAR DROPS.</p>
+      </div>
+    </section>
+
+    <div class="blog-grid">
+      <!-- Post 1 -->
+      <div class="blog-card">
+        <img src="Assets/images/hero_bg_1777238662886.png" alt="Blog 1">
+        <div class="blog-content">
+          <span class="blog-date">May 15, 2026</span>
+          <h3>The Evolution of Cyber-Apparel</h3>
+          <p>Explore how techwear is merging with digital art to create the ultimate aesthetic experience.</p>
+          <a href="blog-cyber-apparel.html" class="read-more">Read Intel</a>
+        </div>
+      </div>
+      <!-- Post 2 -->
+      <div class="blog-card">
+        <img src="Assets/images/hero_image_1777236663611.png" alt="Blog 2">
+        <div class="blog-content">
+          <span class="blog-date">May 12, 2026</span>
+          <h3>Manga Commission Guide 2026</h3>
+          <p>Everything you need to know before requesting your first full-character illustration brief.</p>
+          <a href="blog-manga-guide.html" class="read-more">Read Intel</a>
+        </div>
+      </div>
+      <!-- Post 3 -->
+      <div class="blog-card">
+        <img src="Assets/images/product_art_1777236847250.png" alt="Blog 3">
+        <div class="blog-content">
+          <span class="blog-date">May 08, 2026</span>
+          <h3>Inside the Syndicate Lab</h3>
+          <p>A behind-the-scenes look at how we produce museum-grade archival prints for our artists.</p>
+          <a href="blog-syndicate-lab.html" class="read-more">Read Intel</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <a href="index.html" class="logo" style="display: block; margin-bottom: 20px;">
+          <img src="Assets/images/logo-v3.png" alt="SoulThread Logo" style="height: 80px; filter: drop-shadow(0 0 15px rgba(0, 174, 255, 0.3));">
+        </a>
+        <p>Your ultimate destination for premium art gear, elite commissions, and the latest creative content. Level up your aesthetic experience with us.</p>
+      </div>
+
+      <!-- Column 2 -->
+      <div class="footer-col">
+        <h4>Connect With Us</h4>
+        <div class="social-icons-row">
+          <a href="#" class="social-icon-box fb"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-icon-box dc"><i class="fab fa-discord"></i></a>
+          <a href="#" class="social-icon-box ig"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-icon-box li"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="social-icon-box tw"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+
+      <!-- Column 3 -->
+      <div class="footer-col">
+        <div class="help-title">Need Help?</div>
+        <p>Whether you have a question or just want to say hi, our team is always ready to chat.</p>
+        <a href="javascript:void(0)" class="get-in-touch-btn">Get in Touch <i class="fas fa-arrow-right" style="margin-left: 10px;"></i></a>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="footer-bottom">
+      <div class="footer-bottom-container">
+        <p>© 2026 SoulThread Syndicate. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="faq.html">FAQ</a>
+          <a href="blog.html">Blog</a>
+          <a href="safety.html">Trust & Safety</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Contact Modal -->
+  <div class="contact-modal" id="contactModal">
+    <div class="contact-modal-content">
+      <div class="close-contact-modal"><i class="fas fa-times"></i></div>
+      <h2>TRANSMIT MESSAGE</h2>
+      <p>Establish a secure line with the Syndicate.</p>
+      <form class="syndicate-contact-form">
+        <div class="form-row">
+          <input type="text" placeholder="Agent Name" required>
+          <input type="email" placeholder="Encrypted Email" required>
+        </div>
+        <input type="text" placeholder="Subject" required>
+        <textarea placeholder="Message Log" rows="4" required></textarea>
+        <button type="submit" class="transmit-btn">SEND TRANSMISSION</button>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Portraits | SoulThread Syndicate</title>
+  <link rel="stylesheet" href="CSS/style.css">
+  <link rel="stylesheet" href="CSS/responsive.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="icon" type="image/png" href="Assets/images/logo-v3.png">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Orbitron:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body class="store-page">
+
+  <!-- MAIN HEADER -->
+  <header class="header">
+    <div class="nav-container">
+      <a href="index.html" class="logo" style="display: flex; align-items: center;">
+        <img src="Assets/images/logo-v3.png" alt="SoulThread Logo"
+          style="height: 50px; filter: drop-shadow(0 0 10px rgba(0, 174, 255, 0.4));">
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="store.html" class="active">Store</a>
+        <a href="commissions.html">Commissions</a>
+        <a href="apparel.html">Apparel</a>
+        <a href="blog.html">Blog</a>
+      </nav>
+      <div class="nav-actions">
+        <div class="cart-icon-wrap">
+          <i class="fas fa-shopping-bag"></i>
+          <span class="cart-badge">0</span>
+        </div>
+        <a href="login.html" class="login-btn">LOGIN</a>
+        <a href="signup.html" class="signup-btn">SIGN UP</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- RAPTR SUB-NAV -->
+  <div class="sub-nav">
+    <div class="sub-nav-container">
+      <div class="sub-links">
+        <div class="dropdown">
+          <div class="dropdown-trigger">Apparel & Hoodies <i class="fas fa-chevron-down"></i></div>
+          <div class="dropdown-content">
+            <a href="hoodies.html">Hoodies</a>
+            <a href="t-shirts.html">T-Shirts</a>
+            <a href="tactical-vests.html">Tactical Vests</a>
+            <a href="patches.html">Patches</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <div class="dropdown-trigger">Digital Art Services <i class="fas fa-chevron-down"></i></div>
+          <div class="dropdown-content">
+            <a href="custom-portraits.html">Custom Portraits</a>
+            <a href="mecha-designs.html">Mecha Designs</a>
+            <a href="character-sheets.html">Character Sheets</a>
+            <a href="logo-branding.html">Logo Branding</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <div class="dropdown-trigger">Comics & Prints <i class="fas fa-chevron-down"></i></div>
+          <div class="dropdown-content">
+            <a href="manga-chapters.html">Manga Chapters</a>
+            <a href="poster-prints.html">Poster Prints</a>
+            <a href="limited-editions.html">Limited Editions</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- CART DRAWER & OVERLAY -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-drawer-header">
+      <h2>SYNDICATE CART</h2>
+      <div class="close-cart" id="closeCart"><i class="fas fa-times"></i></div>
+    </div>
+    <div class="cart-items-list" id="cartItemsList">
+      <div class="empty-cart-msg">Your syndicate gear bag is empty.</div>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>TOTAL</span>
+        <span id="cartTotalDisplay">Rs 0</span>
+      </div>
+      <button class="checkout-btn">PROCEED TO CHECKOUT</button>
+    </div>
+  </div>
+
+  <main class="store-main">
+    <div class="store-title-wrap" style="text-align: center; margin: 80px 0 40px;">
+      <h1
+        style="font-family: 'Orbitron', sans-serif; font-size: 3.5rem; color: #fff; text-transform: uppercase; letter-spacing: 5px;">
+        CUSTOM PORTRAITS</h1>
+      <p style="color: var(--accent); font-weight: 800; letter-spacing: 3px; text-transform: uppercase;">Digital
+        Identity Mastering</p>
+    </div>
+
+    <div class="store-content-layout" style="max-width: 1400px; margin: 0 auto; padding: 40px 20px;">
+      <div class="raptr-store-grid"
+        style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px;">
+
+        <!-- Product 1 -->
+        <div class="product-card" data-category="digital art" data-price="8500" data-stock="false"
+          data-commission="true">
+          <div class="wishlist-icon"><i class="far fa-heart"></i></div>
+          <div class="product-img">
+            <img src="Assets/images/Vibe-Check Portrait.png" alt="Vibe-Check Portrait"
+              style="width: 100%; height: 350px; object-fit: cover; border-radius: 12px;">
+          </div>
+          <div class="product-info">
+            <h4>Syndicate Vibe-Check Portrait</h4>
+            <div class="product-price-row"><span>Rs 8,500</span></div>
+            <button class="buy-btn">ADD TO CART</button>
+          </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product-card" data-category="digital art" data-price="7500" data-stock="false"
+          data-commission="true">
+          <div class="wishlist-icon"><i class="far fa-heart"></i></div>
+          <div class="product-img">
+            <img src="Assets/images/Manga Hero Portrait.2.jpg" alt="Cyber-Portrait"
+              style="width: 100%; height: 350px; object-fit: cover; border-radius: 12px;">
+          </div>
+          <div class="product-info">
+            <h4>Elite Cyber Portrait V1</h4>
+            <div class="product-price-row"><span>Rs 7,500</span></div>
+            <button class="buy-btn">ADD TO CART</button>
+          </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product-card" data-category="digital art" data-price="9000" data-stock="false"
+          data-commission="true">
+          <div class="wishlist-icon"><i class="far fa-heart"></i></div>
+          <div class="product-img">
+            <img src="Assets/images/Manga Hero Portrait.1.jpg" alt="Manga Hero Portrait"
+              style="width: 100%; height: 350px; object-fit: cover; border-radius: 12px;">
+          </div>
+          <div class="product-info">
+            <h4>Manga Style Portrait</h4>
+            <div class="product-price-row"><span>Rs 9,000</span></div>
+            <button class="buy-btn">ADD TO CART</button>
+          </div>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="product-card" data-category="digital art" data-price="12000" data-stock="false"
+          data-commission="true">
+          <div class="wishlist-icon"><i class="far fa-heart"></i></div>
+          <div class="product-img">
+            <img src="Assets/images/Manga Hero Portrait.3.jpg" alt="Concept Art Portrait"
+              style="width: 100%; height: 350px; object-fit: cover; border-radius: 12px;">
+          </div>
+          <div class="product-info">
+            <h4>High-Fidelity Concept Portrait</h4>
+            <div class="product-price-row"><span>Rs 12,000</span></div>
+            <button class="buy-btn">ADD TO CART</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <a href="index.html" class="logo" style="display: block; margin-bottom: 20px;">
+          <img src="Assets/images/logo-v3.png" alt="SoulThread Logo"
+            style="height: 80px; filter: drop-shadow(0 0 15px rgba(0, 174, 255, 0.3));">
+        </a>
+        <p>Premium digital mastering for your unique identity.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <div class="social-icons-row">
+          <a href="#" class="social-icon-box"><i class="fab fa-discord"></i></a>
+          <a href="#" class="social-icon-box"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="JS files/main.js"></script>
+</body>
+
+</html>

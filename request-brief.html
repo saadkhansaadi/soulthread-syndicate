@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Request Brief | SoulThread Syndicate</title>
+  <link rel="icon" type="image/png" href="Assets/images/logo-v3.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="CSS/style.css">
+  <link rel="stylesheet" href="CSS/responsive.css">
+  <style>
+    body { background-color: #0b0e14; color: #fff; padding-top: 80px; }
+    .brief-container {
+      max-width: 600px;
+      margin: 100px auto;
+      padding: 50px;
+      background: #0b0e14;
+      border: 1px solid #00fbff;
+      border-radius: 12px;
+    }
+    .brief-container h2 {
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: #fff;
+      text-align: center;
+      margin-bottom: 10px;
+      letter-spacing: 2px;
+    }
+    .brief-container p {
+      text-align: center;
+      color: #00fbff;
+      margin-bottom: 40px;
+      font-weight: 800;
+    }
+    .input-group {
+      margin-bottom: 25px;
+      display: flex;
+      flex-direction: column;
+    }
+    .input-group label {
+      position: static !important;
+      transform: none !important;
+      top: auto !important;
+      left: auto !important;
+      pointer-events: auto !important;
+      display: block !important;
+      margin-bottom: 8px !important;
+      color: #888;
+      font-weight: 800;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      padding: 0 !important;
+      background: transparent !important;
+    }
+    .input-group input, .input-group select, .input-group textarea {
+      position: static !important;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(0, 251, 255, 0.3);
+      padding: 12px;
+      border-radius: 6px;
+      color: #fff;
+      font-family: inherit;
+      outline: none;
+      transition: 0.3s;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .input-group input::placeholder, .input-group textarea::placeholder {
+      color: #64748b;
+      opacity: 1;
+    }
+    .input-group input:focus, .input-group select:focus, .input-group textarea:focus {
+      border-color: #00fbff;
+    }
+    select option {
+      background-color: #0b0e14;
+      color: #f8fafc;
+    }
+    .input-group input[type="file"] {
+      padding: 12px;
+      background: transparent;
+      border: 1px dashed rgba(0, 251, 255, 0.5);
+      cursor: pointer;
+    }
+    .input-group input[type="file"]::file-selector-button {
+      background-color: #0b0e14;
+      color: #00fbff;
+      border: 1px solid #00fbff;
+      padding: 10px 15px;
+      border-radius: 6px;
+      cursor: pointer;
+      text-transform: uppercase;
+      font-weight: 800;
+      font-size: 0.8rem;
+      margin-right: 15px;
+    }
+    .submit-btn {
+      width: 100%;
+      padding: 18px;
+      background: transparent;
+      color: #00fbff;
+      border: 1px solid #00fbff;
+      border-radius: 8px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      cursor: pointer;
+      transition: 0.3s;
+      margin-top: 20px;
+    }
+    .submit-btn:hover {
+      background: #00fbff;
+      color: #0b0e14;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- MAIN HEADER (SYNCED) -->
+  <header class="header">
+    <div class="nav-container">
+      <a href="index.html" class="logo" style="display: flex; align-items: center;">
+        <img src="Assets/images/logo-v3.png" alt="SoulThread Logo" style="height: 50px; filter: drop-shadow(0 0 10px rgba(0, 174, 255, 0.4));">
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <div class="dropdown">
+          <a href="store.html" class="dropdown-trigger">Store <i class="fas fa-chevron-down" style="font-size: 0.6rem; margin-left: 5px;"></i></a>
+          <div class="dropdown-content">
+            <a href="apparel.html"><i class="fas fa-tshirt"></i> Apparel</a>
+            <a href="manga.html"><i class="fas fa-book-open"></i> Manga</a>
+            <a href="logos.html"><i class="fas fa-pen-nib"></i> Logos</a>
+            <a href="characters.html"><i class="fas fa-user-ninja"></i> Characters</a>
+            <a href="digital-art.html"><i class="fas fa-palette"></i> Digital Art</a>
+            <a href="prints.html"><i class="fas fa-print"></i> Prints</a>
+          </div>
+        </div>
+        <a href="commissions.html">Commissions</a>
+        <a href="blog.html">Blog</a>
+      </nav>
+      <div class="nav-actions">
+        <div class="cart-icon-wrap"><i class="fas fa-shopping-bag"></i><span class="cart-badge">0</span></div>
+        <a href="login.html" class="login-btn">LOGIN</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="brief-container">
+      <h2>SUBMIT BRIEF</h2>
+      <p>Transmit your requirements securely to the Syndicate.</p>
+      <form class="brief-form" id="briefForm">
+        <div class="input-group">
+          <label>Project Type</label>
+          <select required>
+            <option>Full Character Illustration</option>
+            <option>Custom Tactical Hoodie</option>
+            <option>Other / Custom Request</option>
+          </select>
+        </div>
+        <div class="input-group">
+          <label>Detailed Description</label>
+          <textarea rows="4" placeholder="Describe your vision, colors, and specifics..." required></textarea>
+        </div>
+        <div class="input-group">
+          <label>Style Preferences</label>
+          <input type="text" placeholder="e.g. Cyberpunk, Mecha, Dark Fantasy" required>
+        </div>
+        <div class="input-group">
+          <label>Estimated Budget</label>
+          <select required>
+            <option>Under Rs 10,000</option>
+            <option>Rs 10,000 - Rs 25,000</option>
+            <option>Rs 25,000+</option>
+          </select>
+        </div>
+        <div class="input-group">
+          <label>Reference Upload</label>
+          <input type="file" required>
+        </div>
+        <button type="submit" class="submit-btn">INITIATE COMMISSION</button>
+      </form>
+      <div id="successMsg" style="display: none; text-align: center; padding: 40px 20px; border: 1px solid #00fbff; border-radius: 8px; margin-top: 20px; background: rgba(0,251,255,0.05);">
+        <i class="fas fa-check-circle" style="font-size: 3rem; color: #00fbff; margin-bottom: 20px;"></i>
+        <h3 style="color: #fff; font-size: 1.5rem; margin-bottom: 10px;">Brief Submitted Successfully!</h3>
+        <p style="color: #888; font-size: 1rem;">Our syndicate agents will review your request and contact you shortly.</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <!-- Column 1 -->
+      <div class="footer-col">
+        <a href="index.html" class="logo" style="display: block; margin-bottom: 20px;">
+          <img src="Assets/images/logo-v3.png" alt="SoulThread Logo" style="height: 80px; filter: drop-shadow(0 0 15px rgba(0, 174, 255, 0.3));">
+        </a>
+        <p>Your ultimate destination for premium art gear, elite commissions, and the latest creative content. Level up your aesthetic experience with us.</p>
+      </div>
+
+      <!-- Column 2 -->
+      <div class="footer-col">
+        <h4>Connect With Us</h4>
+        <div class="social-icons-row">
+          <a href="#" class="social-icon-box fb"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-icon-box dc"><i class="fab fa-discord"></i></a>
+          <a href="#" class="social-icon-box ig"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-icon-box li"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="social-icon-box tw"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+
+      <!-- Column 3 -->
+      <div class="footer-col">
+        <div class="help-title">Need Help?</div>
+        <p>Whether you have a question or just want to say hi, our team is always ready to chat.</p>
+        <a href="javascript:void(0)" class="get-in-touch-btn">Get in Touch <i class="fas fa-arrow-right" style="margin-left: 10px;"></i></a>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="footer-bottom">
+      <div class="footer-bottom-container">
+        <p>© 2026 SoulThread Syndicate. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="faq.html">FAQ</a>
+          <a href="blog.html">Blog</a>
+          <a href="safety.html">Trust & Safety</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Contact Modal -->
+  <div class="contact-modal" id="contactModal">
+    <div class="contact-modal-content">
+      <div class="close-contact-modal"><i class="fas fa-times"></i></div>
+      <h2>TRANSMIT MESSAGE</h2>
+      <p>Establish a secure line with the Syndicate.</p>
+      <form class="syndicate-contact-form">
+        <div class="form-row">
+          <input type="text" placeholder="Agent Name" required>
+          <input type="email" placeholder="Encrypted Email" required>
+        </div>
+        <input type="text" placeholder="Subject" required>
+        <textarea placeholder="Message Log" rows="4" required></textarea>
+        <button type="submit" class="transmit-btn">SEND TRANSMISSION</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="JS files/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.getElementById('briefForm');
+      const success = document.getElementById('successMsg');
+      if(form && success) {
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          form.style.display = 'none';
+          success.style.display = 'block';
+        });
+      }
+    });
+  </script>
+</body>
+</html>
