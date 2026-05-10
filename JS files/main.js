@@ -113,14 +113,26 @@ function initMobileMenu() {
 
     // Move Auth Buttons to Mobile Menu if on mobile
     const authBtns = document.querySelector('.auth-btns');
-    if (authBtns && !navLinks.querySelector('.mobile-auth-links')) {
+    const loginBtn = document.querySelector('.header .login-btn');
+    const signupBtn = document.querySelector('.header .signup-btn');
+
+    if (!navLinks.querySelector('.mobile-auth-links')) {
         const mobileAuthContainer = document.createElement('div');
         mobileAuthContainer.className = 'mobile-auth-links';
         mobileAuthContainer.style.marginTop = '20px';
         mobileAuthContainer.style.paddingTop = '20px';
         mobileAuthContainer.style.borderTop = '1px solid rgba(255,255,255,0.1)';
-        mobileAuthContainer.innerHTML = authBtns.innerHTML;
-        navLinks.appendChild(mobileAuthContainer);
+        
+        if (authBtns) {
+            mobileAuthContainer.innerHTML = authBtns.innerHTML;
+        } else if (loginBtn || signupBtn) {
+            if (loginBtn) mobileAuthContainer.appendChild(loginBtn.cloneNode(true));
+            if (signupBtn) mobileAuthContainer.appendChild(signupBtn.cloneNode(true));
+        }
+        
+        if (mobileAuthContainer.children.length > 0) {
+            navLinks.appendChild(mobileAuthContainer);
+        }
     }
 
     // Inject mobile nav overlay if not already present
