@@ -25,16 +25,46 @@
   }
 
   .nav-container {
-    flex-wrap: nowrap !important; /* Keep logo and actions on one line */
+    display: flex !important;
+    align-items: center !important;
     justify-content: space-between !important;
+    flex-wrap: nowrap !important;
     padding: 0 10px !important;
     width: 100% !important;
-    max-width: 100vw !important;
-    gap: 10px !important; /* Fix overlap / Chipak Gaya fix */
+    gap: 0 !important;
   }
 
-  /* Hamburger Icon (3 White Bars) */
+  /* REORDER HEADER: [Logo] [Cart] [Hamburger] */
+  .logo {
+    order: 1 !important;
+    flex: 1 !important;
+  }
+  
+  .logo img {
+    height: 40px !important;
+    width: auto !important;
+  }
+
+  .nav-actions {
+    order: 2 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 15px !important;
+    margin-left: auto !important;
+  }
+
+  .cart-icon-wrap {
+    display: flex !important;
+    margin: 0 !important;
+  }
+
+  .login-btn, .signup-btn, .auth-btns {
+    display: none !important; /* Hide in header, only show in drawer */
+  }
+
   .hamburger {
+    order: 3 !important;
+    margin-left: 10px !important;
     display: flex !important;
     flex-direction: column;
     justify-content: space-between;
@@ -42,8 +72,44 @@
     height: 20px;
     cursor: pointer;
     z-index: 1502 !important;
-    order: 3; /* Ensure it's on the right */
-    margin-left: 10px !important;
+  }
+
+  /* Hamburger Bars */
+  .hamburger span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background: #ffffff !important;
+    border-radius: 4px;
+    transition: 0.3s;
+  }
+
+  /* SECONDARY NAV RESTORATION */
+  .sub-nav {
+    display: block !important;
+    width: 100% !important;
+    overflow-x: auto !important;
+    background: #000 !important;
+    padding: 10px 0 !important;
+    white-space: nowrap !important;
+    position: relative !important;
+    z-index: 1400 !important;
+    border-bottom: 1px solid rgba(0, 174, 255, 0.2) !important;
+  }
+
+  .sub-nav-container {
+    display: inline-flex !important;
+    padding: 0 15px !important;
+  }
+
+  .sub-links {
+    display: flex !important;
+    gap: 20px !important;
+  }
+
+  .sub-links .dropdown-trigger {
+    font-size: 0.8rem !important;
+    color: #fff !important;
   }
 
   .hamburger span {
@@ -139,10 +205,12 @@
 
   .products-grid, .raptr-store-grid, .product-grid, .timeline-grid {
     width: 100% !important;
-    min-width: 0 !important; /* Fix for Z Fold / A51 invisible products */
+    min-width: 100% !important;
     display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important; /* Default 2 cols */
+    grid-template-columns: repeat(2, 1fr) !important; /* Force 2 cols on mobile */
     gap: 15px !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 
   .product-card {
