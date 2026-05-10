@@ -111,6 +111,18 @@ function initMobileMenu() {
         navContainer.appendChild(btn);
     }
 
+    // Move Auth Buttons to Mobile Menu if on mobile
+    const authBtns = document.querySelector('.auth-btns');
+    if (authBtns && !navLinks.querySelector('.mobile-auth-links')) {
+        const mobileAuthContainer = document.createElement('div');
+        mobileAuthContainer.className = 'mobile-auth-links';
+        mobileAuthContainer.style.marginTop = '20px';
+        mobileAuthContainer.style.paddingTop = '20px';
+        mobileAuthContainer.style.borderTop = '1px solid rgba(255,255,255,0.1)';
+        mobileAuthContainer.innerHTML = authBtns.innerHTML;
+        navLinks.appendChild(mobileAuthContainer);
+    }
+
     // Inject mobile nav overlay if not already present
     if (!document.getElementById('mobileNavOverlay')) {
         const overlay = document.createElement('div');

@@ -75,7 +75,28 @@
 
   /* Auth Buttons on Mobile */
   .auth-btns {
-    display: none !important; /* Hide in header, move to drawer if needed */
+    display: none !important; /* Hide in header */
+  }
+
+  .mobile-auth-links {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 15px !important;
+  }
+
+  .mobile-auth-links .login-btn,
+  .mobile-auth-links .signup-btn {
+    width: 100% !important;
+    justify-content: center !important;
+    border-radius: 8px !important;
+    padding: 12px !important;
+    font-size: 0.9rem !important;
+  }
+
+  .mobile-auth-links .signup-btn {
+    background: var(--accent) !important;
+    color: #fff !important;
+    box-shadow: 0 0 15px rgba(0, 174, 255, 0.3) !important;
   }
 
   /* 2. PRODUCT GRID & STORE REPAIR */
