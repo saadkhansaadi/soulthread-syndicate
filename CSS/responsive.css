@@ -188,28 +188,98 @@
     box-shadow: 0 0 15px rgba(0, 174, 255, 0.3) !important;
   }
 
-  /* 2. STORE GRID & SIDEBAR RECONSTRUCTION */
-  .store-page .store-main-layout,
-  .store-page .store-content-layout {
-    display: flex !important;
-    flex-direction: column !important; /* Stack Sidebar above Grid */
-    width: 100% !important;
-    padding: 0 10px !important;
-    gap: 20px !important;
-  }
+   /* 2. STORE GRID & SIDEBAR RECONSTRUCTION */
+   .store-page .store-main-layout,
+   .store-page .store-content-layout {
+     display: flex !important;
+     flex-direction: column !important; /* Stack Sidebar above Grid */
+     width: 100% !important;
+     padding: 0 10px !important;
+     gap: 20px !important;
+   }
 
-  .store-page .sidebar,
-  .store-page .category-sidebar {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin-bottom: 20px !important;
-    position: static !important;
-    display: block !important;
-    padding: 15px !important;
-    background: rgba(255,255,255,0.02) !important;
-    border-radius: 12px !important;
-    border: 1px solid rgba(0, 174, 255, 0.1) !important;
-  }
+   .store-page .sidebar,
+   .store-page .category-sidebar {
+     width: 100% !important;
+     max-width: 100% !important;
+     margin-bottom: 20px !important;
+     position: static !important;
+     display: block !important;
+     padding: 15px !important;
+     background: rgba(255,255,255,0.02) !important;
+     border-radius: 12px !important;
+     border: 1px solid rgba(0, 174, 255, 0.1) !important;
+   }
+
+   /* STORE PAGE: HORIZONTAL SCROLLING IMAGE SLIDER (5 IMAGES) */
+   .store-page .featured-row {
+     display: flex !important;
+     overflow-x: auto !important;
+     width: 100% !important;
+     scroll-snap-type: x mandatory;
+     gap: 15px !important;
+     padding: 10px 0 !important;
+     -webkit-overflow-scrolling: touch;
+     scrollbar-width: none; /* Hide scrollbar Firefox */
+   }
+
+   .store-page .featured-row::-webkit-scrollbar {
+     display: none; /* Hide scrollbar Chrome/Safari */
+   }
+
+   .store-page .featured-card {
+     min-width: calc(100% / 4) !important; /* Show 4 images at a time */
+     scroll-snap-align: start !important;
+     flex: 0 0 auto !important;
+   }
+
+   .store-page .featured-card img {
+     width: 100% !important;
+     height: auto !important;
+     aspect-ratio: 1/1 !important;
+     object-fit: cover !important;
+     border-radius: 12px !important;
+   }
+
+   /* SECONDARY NAVBAR: VERTICAL STACK ON MOBILE */
+   .store-page .sub-nav {
+     display: block !important;
+     width: 100% !important;
+     overflow-x: auto !important;
+     background: #000 !important;
+     padding: 10px 0 !important;
+     white-space: nowrap !important;
+     position: relative !important;
+     z-index: 1400 !important;
+     border-bottom: 1px solid rgba(0, 174, 255, 0.2) !important;
+   }
+
+   .store-page .sub-nav-container {
+     display: flex !important;
+     flex-direction: column !important; /* Stack vertically */
+     align-items: center !important;
+     gap: 10px !important;
+     padding: 0 15px !important;
+   }
+
+   .store-page .sub-links {
+     display: flex !important;
+     flex-direction: column !important; /* Stack links */
+     align-items: center !important;
+     gap: 8px !important;
+     width: 100% !important;
+   }
+
+   .store-page .sub-links .dropdown-trigger {
+     font-size: 0.8rem !important;
+     color: #fff !important;
+     padding: 8px 16px !important;
+     background: rgba(0, 174, 255, 0.1) !important;
+     border-radius: 4px !important;
+     text-align: center !important;
+     width: 100% !important;
+     max-width: 300px !important;
+   }
 
   /* Universal Grid Fix (Home, Store, Collections) */
   .raptr-store-grid, 
@@ -267,12 +337,88 @@
     min-width: 150px !important;
   }
 
-  /* 3. HOMEPAGE & FOOTER REPAIR */
-  .hero-swiper-section .swiper-slide img {
-    aspect-ratio: 16 / 9 !important;
-    height: auto !important;
-    object-fit: cover !important;
-  }
+   /* HOMEPAGE SECTIONS: VERTICAL STACK & FULL WIDTH */
+   .home-page .hero-swiper-section,
+   .home-page .trust-bar,
+   .home-page .premium-services,
+   .home-page .process-section,
+   .home-page .flash-deals,
+   .home-page .store-main,
+   .home-page .live-stream-section,
+   .home-page .upcoming-drops-section,
+   .home-page .advantage-section,
+   .home-page .reviews-section {
+     display: flex !important;
+     flex-direction: column !important;
+     width: 100% !important;
+     padding: 30px 5% !important;
+     box-sizing: border-box !important;
+   }
+
+   /* Fix inner containers for homepage */
+   .home-page .trust-container,
+   .home-page .premium-grid,
+   .home-page .process-grid,
+   .home-page .raptr-store-grid,
+   .home-page .timeline-grid,
+   .home-page .advantage-grid,
+   .home-page .reviews-marquee-container {
+     display: flex !important;
+     flex-direction: column !important;
+     width: 100% !important;
+     gap: 20px !important;
+   }
+
+   /* Replace fixed widths with relative units */
+   .home-page .store-title-wrap,
+   .home-page .hero-brief,
+   .home-page .drops-info-wrap,
+   .home-page .stream-container {
+     max-width: 100% !important;
+     width: 90vw !important;
+     margin-left: auto !important;
+     margin-right: auto !important;
+   }
+
+   .home-page .trust-item,
+   .home-page .premium-card,
+   .home-page .process-card,
+   .home-page .timeline-card,
+   .home-page .advantage-card,
+   .home-page .review-3d-card {
+     max-width: 100% !important;
+     width: 100% !important;
+     min-width: unset !important;
+   }
+
+   /* Flash deals grid mobile: 2 columns */
+   .home-page .flash-deals .raptr-store-grid {
+     grid-template-columns: repeat(2, 1fr) !important;
+   }
+
+   /* Reviews marquee track: allow horizontal scroll if needed */
+   .home-page .reviews-marquee-container {
+     overflow-x: auto !important;
+     width: 100% !important;
+   }
+
+   .home-page .reviews-marquee-track {
+     display: flex !important;
+     flex-wrap: nowrap !important;
+     width: max-content !important;
+   }
+
+   .home-page .review-3d-card {
+     min-width: 280px !important;
+     flex: 0 0 auto !important;
+   }
+
+   /* 3. HOMEPAGE & FOOTER REPAIR */
+   .hero-swiper-section .swiper-slide img {
+     aspect-ratio: 16 / 9 !important;
+     height: auto !important;
+     object-fit: cover !important;
+   }
 
   .hero-swiper-section {
     min-height: auto !important;
