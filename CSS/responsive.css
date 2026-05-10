@@ -13,12 +13,15 @@
 
   /* KILL HORIZONTAL OVERFLOWS */
   .alert-content, 
-  .reviews-marquee-track, 
   .swiper-slide,
   .reviews-marquee-container {
     width: 100% !important;
     max-width: 100vw !important;
     overflow-x: hidden !important;
+  }
+
+  .reviews-marquee-track {
+    width: max-content !important; /* Allow track to be wide for animation */
   }
 
   .nav-container {
@@ -201,19 +204,54 @@
   }
 
   /* General Safety */
-  body {
+  html, body {
     overflow-x: hidden !important;
     width: 100% !important;
+    position: relative;
   }
 
   section {
-    padding: 40px 15px !important;
+    padding: 30px 5% !important; /* Fluid padding */
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Universal Fluidity Tweaks */
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  /* Small Device Optimization (320px - 360px) */
+  @media (max-width: 360px) {
+    .logo img {
+      height: 40px !important;
+    }
+    .swiper-slide-content h2 {
+      font-size: 1.2rem !important;
+    }
+    .nav-links a {
+      font-size: 1rem !important;
+      padding: 10px 0 !important;
+    }
+    .product-card h4 {
+      font-size: 0.9rem !important;
+    }
+    .buy-btn {
+      padding: 10px !important;
+      font-size: 0.8rem !important;
+    }
   }
 }
 
-/* Very small screens */
+/* Very small screens & Specific Component Fixes */
 @media (max-width: 480px) {
-  .raptr-store-grid, .products-grid, .product-grid {
+  .raptr-store-grid, .products-grid, .product-grid, .timeline-grid {
     grid-template-columns: 1fr !important; /* 1 Column for tiny phones */
+    gap: 15px !important;
+  }
+  
+  .store-title-wrap h1 {
+    font-size: 1.8rem !important;
   }
 }
