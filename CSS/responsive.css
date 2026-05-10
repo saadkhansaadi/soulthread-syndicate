@@ -221,37 +221,84 @@
     max-width: 100% !important;
     height: auto !important;
   }
+}
 
-  /* Small Device Optimization (320px - 360px) */
+/* ============================================================
+   FINAL RESPONSIVENESS POLISH (Strictly < 767px)
+   Targets: Galaxy Z Fold, Surface Duo, iPhone SE, Android A51
+   ============================================================ */
+@media screen and (max-width: 767px) {
+  
+  /* 1. OVERFLOW & GHOSTING KILLER */
+  html, body {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    position: relative;
+  }
+
+  .hero-swiper-section, 
+  .alert-content, 
+  .reviews-marquee-track,
+  .reviews-marquee-container,
+  .nav-container {
+    max-width: 100vw !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 2. DYNAMIC GRID LOGIC (Surface Duo & Z Fold Fix) */
+  .raptr-store-grid, .products-grid, .product-grid, .timeline-grid {
+    display: grid !important;
+    gap: 15px !important; /* Reduced gap for Duo */
+    width: 100% !important;
+    grid-template-columns: repeat(2, 1fr) !important; /* Default 2 columns for 480px-767px */
+  }
+
+  /* Single Column for Small Phones (< 480px) */
+  @media (max-width: 480px) {
+    .raptr-store-grid, .products-grid, .product-grid, .timeline-grid {
+      grid-template-columns: 1fr !important;
+    }
+  }
+
+  /* 3. DISTORTION FIX (Surface Duo 540px) */
+  .product-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+  }
+
+  .product-card .product-img img {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 1 / 1 !important; /* Force square for consistency */
+    object-fit: cover !important;
+    border-radius: 12px !important;
+  }
+
+  /* 4. TEXT & UI SCALING */
+  .store-title-wrap h1 {
+    font-size: 1.8rem !important;
+    line-height: 1.2 !important;
+  }
+
+  .countdown-timer {
+    font-size: 2rem !important;
+    padding: 10px 20px !important;
+  }
+
+  /* 5. ULTRA-SMALL OPTIMIZATION (320px - 360px) */
   @media (max-width: 360px) {
     .logo img {
       height: 40px !important;
-    }
-    .swiper-slide-content h2 {
-      font-size: 1.2rem !important;
     }
     .nav-links a {
       font-size: 1rem !important;
       padding: 10px 0 !important;
     }
-    .product-card h4 {
-      font-size: 0.9rem !important;
-    }
     .buy-btn {
-      padding: 10px !important;
-      font-size: 0.8rem !important;
+      padding: 8px !important;
+      font-size: 0.75rem !important;
     }
-  }
-}
-
-/* Very small screens & Specific Component Fixes */
-@media (max-width: 480px) {
-  .raptr-store-grid, .products-grid, .product-grid, .timeline-grid {
-    grid-template-columns: 1fr !important; /* 1 Column for tiny phones */
-    gap: 15px !important;
-  }
-  
-  .store-title-wrap h1 {
-    font-size: 1.8rem !important;
   }
 }
