@@ -400,4 +400,29 @@
       font-size: 0.75rem !important;
     }
   }
+
+  /* 6. GLOBAL VISIBILITY & ORDER OVERRIDE (FORCE) */
+  .nav-container {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+  }
+
+  .logo { order: 1 !important; flex: 1 !important; }
+  .nav-actions { order: 2 !important; display: flex !important; margin-left: auto !important; }
+  .hamburger { order: 3 !important; display: flex !important; }
+
+  .products-grid, .raptr-store-grid, .product-grid, .timeline-grid {
+    display: grid !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    min-height: 200px !important; /* Ensure they don't collapse */
+  }
+
+  .product-card {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
 }
