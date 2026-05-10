@@ -337,7 +337,12 @@
     min-width: 150px !important;
   }
 
-   /* HOMEPAGE SECTIONS: VERTICAL STACK & FULL WIDTH */
+   /* ============================================================
+    HOMEPAGE VERTICAL STACK RESTORATION (CRITICAL FIX)
+    Forces all horizontal layouts to stack vertically on mobile
+    ============================================================ */
+
+   /* 1. FORCE VERTICAL STACK FOR ALL MAJOR SECTIONS */
    .home-page .hero-swiper-section,
    .home-page .trust-bar,
    .home-page .premium-services,
@@ -351,60 +356,162 @@
      display: flex !important;
      flex-direction: column !important;
      width: 100% !important;
-     padding: 30px 5% !important;
+     padding: 40px 20px !important;
      box-sizing: border-box !important;
+     align-items: center !important;
+     text-align: center !important;
+     gap: 30px !important;
    }
 
-   /* Fix inner containers for homepage */
+   /* 2. INNER CONTAINERS: VERTICAL FLEX + CENTERED */
+   .home-page .hero-brand-intro,
    .home-page .trust-container,
    .home-page .premium-grid,
    .home-page .process-grid,
    .home-page .raptr-store-grid,
    .home-page .timeline-grid,
    .home-page .advantage-grid,
-   .home-page .reviews-marquee-container {
+   .home-page .reviews-marquee-container,
+   .home-page .store-title-wrap,
+   .home-page .drops-info-wrap,
+   .home-page .stream-container,
+   .home-page .flash-deals .store-title-wrap,
+   .home-page .countdown-timer {
      display: flex !important;
      flex-direction: column !important;
+     align-items: center !important;
+     text-align: center !important;
      width: 100% !important;
-     gap: 20px !important;
+     max-width: 100% !important;
+     gap: 30px !important;
    }
 
-   /* Replace fixed widths with relative units */
-   .home-page .store-title-wrap,
-   .home-page .hero-brief,
-   .home-page .drops-info-wrap,
-   .home-page .stream-container {
-     max-width: 100% !important;
-     width: 90vw !important;
+   /* 3. FULL WIDTH & CENTERED ELEMENTS */
+   .home-page .store-title-wrap h1,
+   .home-page .store-title-wrap p,
+   .home-page .hero-brief p,
+   .home-page .drops-info-wrap p,
+   .home-page .stream-container h3,
+   .home-page .countdown-timer {
+     width: 100% !important;
+     max-width: 600px !important;
      margin-left: auto !important;
      margin-right: auto !important;
+     text-align: center !important;
    }
 
-   .home-page .trust-item,
+   .home-page .store-title-wrap h1 {
+     font-size: 2rem !important;
+     line-height: 1.2 !important;
+   }
+
+   .home-page .branded-marquee {
+     width: 100% !important;
+     padding: 20px 0 !important;
+   }
+
+   /* 4. CARD GRIDS: STACK VERTICALLY ON MOBILE */
+   .home-page .premium-grid,
+   .home-page .process-grid,
+   .home-page .advantage-grid,
+   .home-page .timeline-grid {
+     display: flex !important;
+     flex-direction: column !important;
+     align-items: stretch !important;
+     width: 100% !important;
+     gap: 25px !important;
+   }
+
    .home-page .premium-card,
    .home-page .process-card,
-   .home-page .timeline-card,
    .home-page .advantage-card,
-   .home-page .review-3d-card {
+   .home-page .timeline-card {
+     width: 100% !important;
      max-width: 100% !important;
-     width: 100% !important;
      min-width: unset !important;
+     display: flex !important;
+     flex-direction: column !important;
+     align-items: center !important;
+     text-align: center !important;
+     padding: 30px 20px !important;
+     box-sizing: border-box !important;
    }
 
-   /* Flash deals grid mobile: 2 columns */
+   /* 5. FLASH DEALS: 2-COLUMN GRID (KEEP GRID BUT REDUCE TO 2) */
    .home-page .flash-deals .raptr-store-grid {
+     display: grid !important;
      grid-template-columns: repeat(2, 1fr) !important;
+     width: 100% !important;
+     gap: 15px !important;
    }
 
-   /* Reviews marquee track: allow horizontal scroll if needed */
-   .home-page .reviews-marquee-container {
-     overflow-x: auto !important;
+   .home-page .flash-deals .product-card {
      width: 100% !important;
+     max-width: 100% !important;
+   }
+
+   /* 6. TRUST BAR: STACK ITEMS VERTICALLY */
+   .home-page .trust-container {
+     display: flex !important;
+     flex-direction: column !important;
+     align-items: center !important;
+     gap: 30px !important;
+     padding: 30px 20px !important;
+   }
+
+   .home-page .trust-item {
+     display: flex !important;
+     flex-direction: column !important;
+     align-items: center !important;
+     text-align: center !important;
+     width: 100% !important;
+     max-width: 300px !important;
+     padding: 20px !important;
+   }
+
+   /* 7. FEATURED MASTERPIECES (store-main): STAY AS GRID BUT 2 COLUMNS */
+   .home-page .store-main .raptr-store-grid {
+     display: grid !important;
+     grid-template-columns: repeat(2, 1fr) !important;
+     width: 100% !important;
+     gap: 15px !important;
+   }
+
+   /* 8. LIVE STREAM: CENTERED */
+   .home-page .stream-container {
+     display: flex !important;
+     flex-direction: column !important;
+     align-items: center !important;
+     text-align: center !important;
+     width: 100% !important;
+     max-width: 600px !important;
+     padding: 30px 20px !important;
+   }
+
+   /* 9. UPCOMING DROPS: STACK VERTICALLY */
+   .home-page .timeline-grid {
+     display: flex !important;
+     flex-direction: column !important;
+     align-items: center !important;
+     gap: 25px !important;
+   }
+
+   .home-page .timeline-card {
+     width: 100% !important;
+     max-width: 400px !important;
+   }
+
+   /* 10. REVIEWS MARQUEE: HORIZONTAL BUT CONTAINED */
+   .home-page .reviews-marquee-container {
+     width: 100% !important;
+     overflow-x: auto !important;
+     padding: 20px 0 !important;
    }
 
    .home-page .reviews-marquee-track {
      display: flex !important;
      flex-wrap: nowrap !important;
+     gap: 20px !important;
      width: max-content !important;
    }
 
