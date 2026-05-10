@@ -189,7 +189,8 @@
   }
 
   /* 2. STORE GRID & SIDEBAR RECONSTRUCTION */
-  .store-page .store-main-layout {
+  .store-page .store-main-layout,
+  .store-page .store-content-layout {
     display: flex !important;
     flex-direction: column !important; /* Stack Sidebar above Grid */
     width: 100% !important;
@@ -197,7 +198,8 @@
     gap: 20px !important;
   }
 
-  .store-page .sidebar {
+  .store-page .sidebar,
+  .store-page .category-sidebar {
     width: 100% !important;
     max-width: 100% !important;
     margin-bottom: 20px !important;
