@@ -28,7 +28,47 @@
   .reviews-marquee-track { width: max-content !important; }
 
   /* ============================================================
-     2. HEADER & HAMBURGER MENU
+     2. FLUID WIDTH OVERRIDES (Kill fixed pixel widths)
+     ============================================================ */
+  /* Target any element with inline fixed width > 100% */
+  [style*="width: 1200px"],
+  [style*="width:1200px"],
+  [style*="width: 950px"],
+  [style*="width:950px"],
+  [style*="width: 800px"],
+  [style*="width:800px"],
+  [style*="width: 700px"],
+  [style*="width:700px"],
+  [style*="width: 600px"],
+  [style*="width:600px"] {
+    width: 100% !important;
+    max-width: 90vw !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* Force all section containers to be full-width and centered */
+  .home-page > section,
+  .home-page .nav-container,
+  .home-page .store-title-wrap,
+  .home-page .hero-brand-intro,
+  .home-page .trust-container,
+  .home-page .premium-grid,
+  .home-page .process-grid,
+  .home-page .raptr-store-grid,
+  .home-page .timeline-grid,
+  .home-page .advantage-grid,
+  .home-page .reviews-marquee-container,
+  .home-page .drops-info-wrap,
+  .home-page .stream-container {
+    width: 100% !important;
+    max-width: 90vw !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* ============================================================
+     3. HEADER & HAMBURGER MENU
      ============================================================ */
   .header {
     height: 65px !important;
@@ -605,14 +645,14 @@
   }
 
   .comm-hero h1 {
-    font-size: 2.5rem !important;
+    font-size: clamp(1.5rem, 5vw, 2.5rem) !important;
     text-align: center !important;
     letter-spacing: 2px !important;
     margin: 0 auto 20px !important;
   }
 
   .comm-hero p {
-    font-size: 1rem !important;
+    font-size: clamp(0.9rem, 2vw, 1rem) !important;
     text-align: center !important;
     margin: 0 auto !important;
   }
