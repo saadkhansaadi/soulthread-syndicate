@@ -1,6 +1,6 @@
 /* ============================================================
-   SOULTHREAD SYNDICATE - MOBILE RESPONSIVE CSS (V4.1)
-   CRITICAL UI RESTORATION - DO NOT HIDE ELEMENTS
+   SOULTHREAD SYNDICATE - MOBILE RESPONSIVE CSS (V4.2)
+   FINAL POLISH - HEADER, TESTIMONIALS & STORE OVERHAUL
    ============================================================ */
 
 @media (max-width: 1024px) {
@@ -21,7 +21,66 @@
   }
 
   /* ============================================================
-     2. HAMBURGER MENU - FULLY RESTORED (NO HIDE)
+     2. HEADER & LOGO FIX (Bara Logo)
+     ============================================================ */
+  .header {
+    height: 70px !important;
+    padding: 0 10px !important;
+  }
+
+  .nav-container {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    height: 70px !important;
+    width: 100% !important;
+    gap: 0 !important;
+  }
+
+  .logo {
+    order: 1 !important;
+    flex: 1 !important;
+  }
+
+  .logo img {
+    height: 40px !important;
+    width: auto !important;
+    max-width: 150px !important;
+    object-fit: contain !important;
+  }
+
+  .nav-actions {
+    order: 2 !important;
+    margin-left: auto !important;
+  }
+
+  .login-btn, .signup-btn, .auth-btns {
+    display: none !important;
+  }
+
+  .hamburger {
+    order: 3 !important;
+    display: flex !important;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    cursor: pointer;
+    z-index: 1502 !important;
+  }
+
+  .hamburger span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background: #ffffff !important;
+    border-radius: 4px;
+    transition: 0.3s;
+  }
+
+  /* ============================================================
+     3. HAMBURGER MENU - FULLY RESTORED
      ============================================================ */
   .nav-links {
     display: none !important;
@@ -70,7 +129,6 @@
     opacity: 1 !important;
   }
 
-  /* Mobile Nav Overlay */
   .mobile-nav-overlay {
     display: none !important;
     position: fixed !important;
@@ -87,13 +145,11 @@
   }
 
   /* ============================================================
-     3. HERO SLIDER IMAGE FIX - NO CROPPING
+     4. HERO SLIDER IMAGE FIX
      ============================================================ */
   .hero-swiper-section,
   .mySwiper,
-  .swiper-slide,
-  .hero-slider,
-  .hero-slide {
+  .swiper-slide {
     width: 100% !important;
     min-height: 300px !important;
   }
@@ -111,7 +167,7 @@
   }
 
   /* ============================================================
-     4. GLOBAL VERTICAL STACKING - DO NOT HIDE
+     5. GLOBAL VERTICAL STACKING - HOME PAGE
      ============================================================ */
   section {
     padding: 40px 20px !important;
@@ -139,7 +195,6 @@
     text-align: center !important;
   }
 
-  /* Force all containers to stack */
   .home-page .nav-container,
   .home-page .store-title-wrap,
   .home-page .hero-brand-intro,
@@ -160,20 +215,8 @@
     text-align: center !important;
   }
 
-  /* Remove grid-layout override */
-  [style*="grid-template-columns"],
-  .raptr-store-grid,
-  .timeline-grid,
-  .premium-grid,
-  .process-grid,
-  .advantage-grid {
-    display: flex !important;
-    flex-direction: column !important;
-    grid-template-columns: none !important;
-  }
-
   /* ============================================================
-     5. 3 SIMPLE STEPS & START YOUR PROJECT - RESTORED
+     6. 3 SIMPLE STEPS & START YOUR PROJECT - RESTORED
      ============================================================ */
   .process-section .process-grid,
   .process-section .process-card,
@@ -192,7 +235,6 @@
     opacity: 1 !important;
   }
 
-  /* Icons in process/advantage cards - RESTORED */
   .process-card i,
   .advantage-card i,
   .premium-card i {
@@ -215,7 +257,6 @@
     opacity: 1 !important;
   }
 
-  /* Card headings - RESTORED */
   .process-card h3,
   .advantage-card h3,
   .premium-card h3 {
@@ -240,8 +281,17 @@
   }
 
   /* ============================================================
-     6. SYNDICATE COMMS - UNIFORM CARDS
+     7. TESTIMONIALS FIX - VERTICAL STACK
      ============================================================ */
+  .testimonial-card, .review-card, .review-3d-card {
+    width: 90% !important;
+    margin: 10px auto !important;
+    display: block !important;
+    min-height: 200px !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
   .reviews-section .reviews-marquee-track {
     display: flex !important;
     flex-direction: column !important;
@@ -249,31 +299,23 @@
     width: 100% !important;
   }
 
-  .review-3d-card {
-    width: 100% !important;
-    max-width: 400px !important;
-    margin: 0 auto !important;
-    flex: 1 1 auto !important;
-    min-height: 350px !important;
-    display: flex !important;
-    flex-direction: column !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-  }
-
   .reviews-section .review-3d-inner {
-    flex: 1 !important;
     display: flex !important;
     flex-direction: column !important;
+    height: 100% !important;
   }
 
   /* ============================================================
-     7. STORE PAGE RESPONSIVENESS
+     8. STORE PAGE TOTAL TRANSFORMATION
      ============================================================ */
+  .store-page .sidebar {
+    display: none !important;
+  }
+
   .store-page .raptr-store-grid {
     display: grid !important;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)) !important;
-    gap: 15px !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
     padding: 10px !important;
     width: 100% !important;
   }
@@ -286,6 +328,10 @@
     flex: none !important;
     display: flex !important;
     flex-direction: column !important;
+    background: #111 !important;
+    border-radius: 12px !important;
+    padding: 10px !important;
+    text-align: center !important;
   }
 
   .store-page .product-card .product-img {
@@ -304,18 +350,18 @@
   }
 
   /* ============================================================
-     8. FLASH DEALS & FEATURED GRIDS
+     9. FLASH DEALS & FEATURED GRIDS
      ============================================================ */
   .home-page .flash-deals .raptr-store-grid,
   .home-page .store-main .raptr-store-grid {
     display: grid !important;
-    grid-template-columns: 1fr !important;
-    gap: 15px !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
     width: 100% !important;
   }
 
   /* ============================================================
-     9. UPCOMING DROPS - VERTICAL STACK
+     10. UPCOMING DROPS - VERTICAL STACK
      ============================================================ */
   .home-page .upcoming-drops-section .timeline-grid {
     display: flex !important;
@@ -331,7 +377,8 @@
   }
 
   /* ============================================================
-     10. TRUST BAR - VERTICAL */
+     11. TRUST BAR - VERTICAL
+     ============================================================ */
   .home-page .trust-container {
     flex-direction: column !important;
     padding: 30px 15px !important;
@@ -345,7 +392,7 @@
   }
 
   /* ============================================================
-     11. HEADINGS - CLAMP SYSTEM
+     12. HEADINGS - CLAMP SYSTEM
      ============================================================ */
   h1, .home-page .store-title-wrap h1,
   .home-page .hero-brand-intro h2 {
@@ -363,7 +410,7 @@
   }
 
   /* ============================================================
-     12. IMAGES - ALWAYS VISIBLE
+     13. IMAGES & FOOTER LOGO FIX
      ============================================================ */
   img {
     max-width: 100% !important;
@@ -373,8 +420,12 @@
     display: block !important;
   }
 
-  /* ============================================================
-     13. FOOTER - STACKED */
+  .footer-logo img {
+    height: 50px !important;
+    width: auto !important;
+    margin-bottom: 20px !important;
+  }
+
   .footer-grid {
     display: flex !important;
     flex-direction: column !important;
@@ -396,6 +447,10 @@
   @media (max-width: 480px) {
     .home-page .store-title-wrap h1 {
       font-size: 1.4rem !important;
+    }
+
+    .store-page .raptr-store-grid {
+      grid-template-columns: 1fr !important;
     }
   }
 }
