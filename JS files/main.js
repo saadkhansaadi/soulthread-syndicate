@@ -438,6 +438,9 @@ function initCartSystem() {
 
             addToCart({ name, price, priceText, imgSrc });
             
+            // Play UI Sound
+            if (window.playTechSound) window.playTechSound('addCart');
+            
             const originalText = btn.innerText;
             btn.innerText = 'ADDED!';
             setTimeout(() => btn.innerText = originalText, 1500);

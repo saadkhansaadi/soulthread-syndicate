@@ -295,6 +295,9 @@
     }
 
     function placeOrder() {
+      // Play Success Chime
+      if (window.playTechSound) window.playTechSound('success');
+      
       document.getElementById('orderSuccessModal').classList.add('active');
       localStorage.removeItem('soulthread_cart');
     }
