@@ -378,4 +378,17 @@
     background: rgba(0, 174, 255, 0.05) !important;
     padding-left: 35px !important;
   }
+
+  /* STORE SUB-PAGES FIX (Apparel, Hoodies, etc) */
+  .store-content-layout {
+    flex-direction: column !important;
+    padding: 20px 10px !important;
+    gap: 20px !important;
+  }
+  
+  .category-sidebar {
+    flex: none !important;
+    width: 100% !important;
+    margin-bottom: 20px !important;
+  }
 }
