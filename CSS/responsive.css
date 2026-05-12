@@ -391,4 +391,21 @@
     width: 100% !important;
     margin-bottom: 20px !important;
   }
+
+  /* CART DRAWER MOBILE FIX */
+  .cart-drawer {
+    width: 100% !important;
+    right: -100% !important; /* Start hidden off-screen */
+  }
+  
+  .cart-drawer.open {
+    right: 0 !important;
+  }
+  
+  .cart-drawer-header,
+  .cart-items-list,
+  .cart-footer {
+    padding: 20px !important;
+  }
 }
+
