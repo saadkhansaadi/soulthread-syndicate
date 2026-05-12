@@ -84,9 +84,49 @@ document.addEventListener('DOMContentLoaded', () => {
     initThemeToggle();
     initProductLogic();
     initMobileMenu();
+    initMobileSubNav();
     
     console.log("SYNDICATE OS: ALL SYSTEMS OPERATIONAL.");
 });
+
+
+// ==========================================
+// MOBILE STORE SUB-NAV ACCORDION
+// ==========================================
+function initMobileSubNav() {
+    if (window.innerWidth > 992) return;
+
+    const subNav = document.querySelector('.store-page .sub-nav');
+    const subNavDropdowns = document.querySelectorAll('.store-page .sub-nav .dropdown');
+    if (!subNavDropdowns.length) return;
+
+    subNavDropdowns.forEach(dropdown => {
+        const trigger = dropdown.querySelector('.dropdown-trigger');
+        if (!trigger) return;
+
+        trigger.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+
+            const isOpen = dropdown.classList.contains('open');
+
+            // Close all others first
+            subNavDropdowns.forEach(d => d.classList.remove('open'));
+
+            // Toggle this one
+            if (!isOpen) {
+                dropdown.classList.add('open');
+            }
+        });
+    });
+
+    // Close all when clicking outside the entire sub-nav
+    document.addEventListener('click', (e) => {
+        if (subNav && !subNav.contains(e.target)) {
+            subNavDropdowns.forEach(d => d.classList.remove('open'));
+        }
+    });
+}
 
 
 // ==========================================
@@ -468,6 +508,18 @@ function initCartSystem() {
         renderCart();
     };
     
+    // Attach event listener to checkout button in the drawer
+    const drawerCheckoutBtn = document.querySelector('#cartDrawer .checkout-btn');
+    if (drawerCheckoutBtn) {
+        drawerCheckoutBtn.addEventListener('click', () => {
+            if (cart.length === 0) {
+                alert('Your syndicate bag is empty. Add some gear first!');
+                return;
+            }
+            window.location.href = 'checkout.html';
+        });
+    }
+
     renderCart();
 }
 
