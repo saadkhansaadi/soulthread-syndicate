@@ -64,6 +64,17 @@
     .blog-content p { font-size: 0.9rem; color: #888; line-height: 1.6; margin-bottom: 25px; }
     .read-more { color: #fff; font-weight: 900; font-size: 0.8rem; text-transform: uppercase; border-bottom: 2px solid #00fbff; padding-bottom: 5px; transition: 0.3s; text-decoration: none; }
     .read-more:hover { color: #00fbff; }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .blog-hero { height: auto !important; padding: 80px 15px 30px !important; }
+      .blog-hero h1 { font-size: 2.2rem !important; letter-spacing: 2px !important; }
+      .blog-hero p { font-size: 0.9rem !important; }
+      .blog-grid { grid-template-columns: 1fr !important; gap: 20px !important; margin-bottom: 50px !important; padding: 0 15px !important; }
+      .blog-card img { height: 220px !important; }
+      .blog-content { padding: 20px 15px !important; }
+      .blog-content h3 { font-size: 1.2rem !important; }
+    }
   </style>
 </head>
 <body class="blog-page">
@@ -93,7 +104,10 @@
       </nav>
       <div class="nav-actions">
         <div class="cart-icon-wrap"><i class="fas fa-shopping-bag"></i><span class="cart-badge">0</span></div>
-        <a href="login.html" class="login-btn">LOGIN</a>
+        <div class="auth-btns">
+          <a href="login.html" class="login-btn">LOGIN</a>
+          <a href="signup.html" class="signup-btn">SIGN UP</a>
+        </div>
       </div>
     </div>
   </header>
@@ -205,5 +219,6 @@
     </div>
   </div>
 
+  <script src="JS files/main.js"></script>
 </body>
 </html>
